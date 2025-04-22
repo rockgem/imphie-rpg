@@ -1,3 +1,44 @@
-[gd_scene format=3 uid="uid://d28cddmf8a6us"]
+[gd_scene load_steps=3 format=3 uid="uid://d28cddmf8a6us"]
+
+[ext_resource type="Script" uid="uid://cb5w077adpvvu" path="res://scenes/World.gd" id="1_32lhk"]
+[ext_resource type="PackedScene" uid="uid://b2qocxec5lcq0" path="res://scenes/Ui.tscn" id="2_32lhk"]
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_32lhk")
+
+[node name="UI" parent="." instance=ExtResource("2_32lhk")]
+
+[node name="PlayerSpawnPoints" type="Node2D" parent="."]
+
+[node name="PlayerSpawnPoint" type="Node2D" parent="PlayerSpawnPoints"]
+position = Vector2(264, 220)
+
+[node name="PlayerSpawnPoint2" type="Node2D" parent="PlayerSpawnPoints"]
+position = Vector2(359, 326)
+
+[node name="PlayerSpawnPoint3" type="Node2D" parent="PlayerSpawnPoints"]
+position = Vector2(264, 441)
+
+[node name="PlayerSpawnPoint4" type="Node2D" parent="PlayerSpawnPoints"]
+position = Vector2(134, 220)
+
+[node name="PlayerSpawnPoint5" type="Node2D" parent="PlayerSpawnPoints"]
+position = Vector2(134, 441)
+
+[node name="EnemySpawnPoints" type="Node2D" parent="."]
+position = Vector2(442, 0)
+
+[node name="PlayerSpawnPoint2" type="Node2D" parent="EnemySpawnPoints"]
+position = Vector2(359, 326)
+
+[node name="PlayerSpawnPoint4" type="Node2D" parent="EnemySpawnPoints"]
+position = Vector2(440, 220)
+
+[node name="PlayerSpawnPoint5" type="Node2D" parent="EnemySpawnPoints"]
+position = Vector2(440, 441)
+
+[node name="PlayerSpawnPoint" type="Node2D" parent="EnemySpawnPoints"]
+position = Vector2(570, 220)
+
+[node name="PlayerSpawnPoint3" type="Node2D" parent="EnemySpawnPoints"]
+position = Vector2(570, 441)

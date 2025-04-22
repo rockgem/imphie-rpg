@@ -1,0 +1,38 @@
+{
+	"Warrior": {
+		"defense": 14,
+		"speed": 4,
+		"hp": 45,
+		"hp_max": 45,
+		"mana": 15,
+		"mana_max": 15,
+		"exp": 0,
+		"exp_max": 0,
+		"level": 1,
+		"name": "Warrior"
+	},
+	"Mage": {
+		"defense": 3,
+		"speed": 11,
+		"hp": 10,
+		"hp_max": 10,
+		"mana": 50,
+		"mana_max": 50,
+		"exp": 0,
+		"exp_max": 0,
+		"level": 1,
+		"name": "Mage"
+	},
+	"Archer": {
+		"defense": 8,
+		"speed": 16,
+		"hp": 20,
+		"hp_max": 20,
+		"mana": 35,
+		"mana_max": 35,
+		"exp": 0,
+		"exp_max": 0,
+		"level": 1,
+		"name": "Archer"
+	}
+}

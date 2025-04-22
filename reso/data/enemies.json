@@ -1,0 +1,38 @@
+{
+	"Joker": {
+		"defense": 15,
+		"speed": 7,
+		"hp": 24,
+		"hp_max": 24,
+		"mana": 15,
+		"mana_max": 15,
+		"exp": 0,
+		"exp_max": 0,
+		"level": 1,
+		"name": "Joker"
+	},
+	"Slime": {
+		"defense": 31,
+		"speed": 5,
+		"hp": 15,
+		"hp_max": 15,
+		"mana": 50,
+		"mana_max": 50,
+		"exp": 0,
+		"exp_max": 0,
+		"level": 1,
+		"name": "Slime"
+	},
+	"Clown": {
+		"defense": 10,
+		"speed": 20,
+		"hp": 55,
+		"hp_max": 55,
+		"mana": 35,
+		"mana_max": 35,
+		"exp": 0,
+		"exp_max": 0,
+		"level": 1,
+		"name": "Clown"
+	}
+}

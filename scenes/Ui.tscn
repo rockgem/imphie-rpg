@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2qocxec5lcq0"]
+
+[ext_resource type="PackedScene" uid="uid://b4ggmf4ckbqgt" path="res://actors/ui/CharacterStatDisplay.tscn" id="1_agcvy"]
+[ext_resource type="Script" uid="uid://b7bgmohw02mem" path="res://scenes/Ui.gd" id="1_g3ve3"]
+
+[node name="UI" type="CanvasLayer"]
+layer = 101
+script = ExtResource("1_g3ve3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 64.0
+offset_top = 7.0
+offset_right = -64.0
+offset_bottom = 123.0
+grow_horizontal = 2
+theme_override_constants/separation = 100
+
+[node name="PlayerCharactersBox" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterStatDisplay" parent="HBoxContainer/PlayerCharactersBox" instance=ExtResource("1_agcvy")]
+layout_mode = 2
+
+[node name="CharacterStatDisplay2" parent="HBoxContainer/PlayerCharactersBox" instance=ExtResource("1_agcvy")]
+layout_mode = 2
+
+[node name="CharacterStatDisplay3" parent="HBoxContainer/PlayerCharactersBox" instance=ExtResource("1_agcvy")]
+layout_mode = 2
+
+[node name="RoundDisplay" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/RoundDisplay"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Round"
+
+[node name="RoundAmount" type="Label" parent="HBoxContainer/RoundDisplay"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "5"
+horizontal_alignment = 1
+
+[node name="EnemyCharactersBox" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterStatDisplay" parent="HBoxContainer/EnemyCharactersBox" instance=ExtResource("1_agcvy")]
+layout_mode = 2
+
+[node name="CharacterStatDisplay2" parent="HBoxContainer/EnemyCharactersBox" instance=ExtResource("1_agcvy")]
+layout_mode = 2
+
+[node name="CharacterStatDisplay3" parent="HBoxContainer/EnemyCharactersBox" instance=ExtResource("1_agcvy")]
+layout_mode = 2
