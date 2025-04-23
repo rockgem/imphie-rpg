@@ -20,6 +20,7 @@ theme_override_constants/separation = 100
 [node name="PlayerCharactersBox" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 4
 
 [node name="CharacterStatDisplay" parent="HBoxContainer/PlayerCharactersBox" instance=ExtResource("1_agcvy")]
 layout_mode = 2
@@ -47,6 +48,7 @@ horizontal_alignment = 1
 [node name="EnemyCharactersBox" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 4
 
 [node name="CharacterStatDisplay" parent="HBoxContainer/EnemyCharactersBox" instance=ExtResource("1_agcvy")]
 layout_mode = 2

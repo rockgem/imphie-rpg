@@ -1,6 +1,9 @@
 extends VBoxContainer
 
 
+@onready var mana_bar = $ManaBar
+
+
 var entity_ref: Entity = null
 
 

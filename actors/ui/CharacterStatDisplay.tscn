@@ -5,6 +5,7 @@
 [node name="CharacterStatDisplay" type="VBoxContainer"]
 offset_right = 444.0
 offset_bottom = 28.0
+size_flags_vertical = 3
 script = ExtResource("1_cwbe0")
 
 [node name="Stats" type="HBoxContainer" parent="."]
@@ -20,6 +21,7 @@ show_percentage = false
 
 [node name="Name" type="Label" parent="Stats/HPBar"]
 custom_minimum_size = Vector2(90, 0)
+layout_mode = 0
 offset_left = 13.0
 offset_top = 1.0
 offset_right = 103.0

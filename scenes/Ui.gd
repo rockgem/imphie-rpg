@@ -7,6 +7,10 @@ func _ready() -> void:
 	clear_players()
 
 
+func _physics_process(delta: float) -> void:
+	$HBoxContainer/RoundDisplay/RoundAmount.text = '%s' % ManagerGame.global_main_world_ref.round
+
+
 func clear_players():
 	for child in $HBoxContainer/PlayerCharactersBox.get_children():
 		child.queue_free()
@@ -26,3 +30,5 @@ func add_enemy_display(entity_ref: Entity):
 	display.entity_ref = entity_ref
 	
 	$HBoxContainer/EnemyCharactersBox.add_child(display)
+	
+	display.mana_bar.hide()
