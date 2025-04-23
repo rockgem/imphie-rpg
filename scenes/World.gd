@@ -93,7 +93,10 @@ func next_wave():
 	turns_arrangement = get_tree().get_nodes_in_group("Entity")
 	turns_arrangement.sort_custom(sort_speed)
 	
-	
+	if turns_arrangement[0].is_player:
+		$UI.pop_bottom_panel(turns_arrangement[0])
+	else:
+		turns_arrangement[0].choose_random_player_attack()
 
 
 func end_wave():
@@ -105,4 +108,15 @@ func end_round():
 
 
 func on_entity_action_finished():
-	pass
+	# here we basically just removed the first entity in the array ( because they already made their move )
+	# and push them at the back of the array, they will wait for their turn again
+	var first = turns_arrangement.pop_front()
+	turns_arrangement.push_back(first)
+	
+	# after the array has shifted, the previously second entity that were waiting for their turn,
+	# are now at the first place, so they will now execute their turn
+	if turns_arrangement[0].is_player:
+		$UI.pop_bottom_panel(turns_arrangement[0])
+	else:
+		$UI.hide_bottom_panel()
+		turns_arrangement[0].choose_random_player_attack()

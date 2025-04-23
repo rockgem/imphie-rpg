@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-
+var attack_queue = {}
 
 
 func _ready() -> void:
@@ -37,6 +37,13 @@ func add_enemy_display(entity_ref: Entity):
 
 
 func pop_bottom_panel(entity: Entity):
-	
+	$BottomPanel/HBoxContainer/StatBox/EntityAttack/Label2.text = '%s' % int(entity.data['attack'])
+	$BottomPanel/HBoxContainer/StatBox/EntityDefense/Label2.text = '%s' % int(entity.data['defense'])
+	$BottomPanel/HBoxContainer/StatBox/EntitySpeed/Label2.text = '%s' % int(entity.data['speed'])
 	
 	$BottomPanel.show()
+
+
+func hide_bottom_panel():
+	
+	$BottomPanel.hide()
