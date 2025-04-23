@@ -1,5 +1,6 @@
 {
 	"Warrior": {
+		"attack": 18,
 		"defense": 14,
 		"speed": 4,
 		"hp": 45,
@@ -12,6 +13,7 @@
 		"name": "Warrior"
 	},
 	"Mage": {
+		"attack": 4,
 		"defense": 3,
 		"speed": 11,
 		"hp": 10,
@@ -24,6 +26,7 @@
 		"name": "Mage"
 	},
 	"Archer": {
+		"attack": 12,
 		"defense": 8,
 		"speed": 16,
 		"hp": 20,

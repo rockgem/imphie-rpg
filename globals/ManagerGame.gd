@@ -5,6 +5,7 @@ signal round_finished
 signal round_started
 signal wave_finished
 signal wave_started
+signal entity_action_finished
 
 
 # here we reference the entire game level / the game world so we can easily access things

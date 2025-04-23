@@ -5,6 +5,8 @@ extends CanvasLayer
 
 func _ready() -> void:
 	clear_players()
+	
+	$BottomPanel.hide()
 
 
 func _physics_process(delta: float) -> void:
@@ -32,3 +34,9 @@ func add_enemy_display(entity_ref: Entity):
 	$HBoxContainer/EnemyCharactersBox.add_child(display)
 	
 	display.mana_bar.hide()
+
+
+func pop_bottom_panel(entity: Entity):
+	
+	
+	$BottomPanel.show()

@@ -1,0 +1,34 @@
+{
+	"Attack": {
+		"desc": "A normal melee attack",
+		"damage": 2,
+		"mana_cost": 0,
+		"target": "enemy",
+		"target_type": "single",
+		"attack_type": "melee"
+	},
+	"Heal": {
+		"desc": "Restores some health of any teamate",
+		"damage": 2,
+		"mana_cost": 10,
+		"target": "team",
+		"target_type": "single",
+		"attack_type": "spell"
+	},
+	"Bolt": {
+		"desc": "Electrifies a single enemy unit",
+		"damage": 12,
+		"mana_cost": 25,
+		"target": "enemy",
+		"target_type": "single",
+		"attack_type": "spell"
+	},
+	"Buff": {
+		"desc": "Idk buff.",
+		"damage": 12,
+		"mana_cost": 25,
+		"target": "enemy",
+		"target_type": "single",
+		"attack_type": "buff"
+	},
+}

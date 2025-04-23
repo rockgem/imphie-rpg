@@ -1,5 +1,6 @@
 {
 	"Joker": {
+		"attack": 15,
 		"defense": 15,
 		"speed": 7,
 		"hp": 24,
@@ -12,6 +13,7 @@
 		"name": "Joker"
 	},
 	"Slime": {
+		"attack": 15,
 		"defense": 31,
 		"speed": 5,
 		"hp": 15,
@@ -24,6 +26,7 @@
 		"name": "Slime"
 	},
 	"Clown": {
+		"attack": 6,
 		"defense": 10,
 		"speed": 20,
 		"hp": 55,

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2qocxec5lcq0"]
+[gd_scene load_steps=4 format=3 uid="uid://b2qocxec5lcq0"]
 
 [ext_resource type="PackedScene" uid="uid://b4ggmf4ckbqgt" path="res://actors/ui/CharacterStatDisplay.tscn" id="1_agcvy"]
 [ext_resource type="Script" uid="uid://b7bgmohw02mem" path="res://scenes/Ui.gd" id="1_g3ve3"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_g3ve3"]
 
 [node name="UI" type="CanvasLayer"]
 layer = 101
@@ -57,4 +59,174 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="CharacterStatDisplay3" parent="HBoxContainer/EnemyCharactersBox" instance=ExtResource("1_agcvy")]
+layout_mode = 2
+
+[node name="BottomPanel" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -445.0
+offset_top = -167.0
+offset_right = 445.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = 25.0
+offset_right = -33.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="StatBox" type="VBoxContainer" parent="BottomPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="EntityAttack" type="HBoxContainer" parent="BottomPanel/HBoxContainer/StatBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/StatBox/EntityAttack"]
+layout_mode = 2
+text = "Att:"
+
+[node name="Label2" type="Label" parent="BottomPanel/HBoxContainer/StatBox/EntityAttack"]
+layout_mode = 2
+text = "12+1"
+
+[node name="EntityDefense" type="HBoxContainer" parent="BottomPanel/HBoxContainer/StatBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/StatBox/EntityDefense"]
+layout_mode = 2
+text = "Def:"
+
+[node name="Label2" type="Label" parent="BottomPanel/HBoxContainer/StatBox/EntityDefense"]
+layout_mode = 2
+text = "4"
+
+[node name="EntitySpeed" type="HBoxContainer" parent="BottomPanel/HBoxContainer/StatBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/StatBox/EntitySpeed"]
+layout_mode = 2
+text = "Spd:"
+
+[node name="Label2" type="Label" parent="BottomPanel/HBoxContainer/StatBox/EntitySpeed"]
+layout_mode = 2
+text = "12"
+
+[node name="VSeparator" type="VSeparator" parent="BottomPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="AttackOptionsBox" type="VBoxContainer" parent="BottomPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomPanel/HBoxContainer/AttackOptionsBox"]
+layout_mode = 2
+
+[node name="Attack" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/HBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_g3ve3")
+text = "Attack"
+
+[node name="Heal" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/HBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_g3ve3")
+text = "Heal"
+
+[node name="Bolt" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/HBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_g3ve3")
+text = "Bolt"
+
+[node name="Buff" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/HBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_g3ve3")
+text = "Buff"
+
+[node name="SkillDescription" type="Label" parent="BottomPanel/HBoxContainer/AttackOptionsBox"]
+layout_mode = 2
+text = "Skill Description here: %s"
+horizontal_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="BottomPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="SkillStatBox" type="VBoxContainer" parent="BottomPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomPanel/HBoxContainer/SkillStatBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/HBoxContainer"]
+layout_mode = 2
+text = "Dmg:"
+
+[node name="Label2" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/HBoxContainer"]
+layout_mode = 2
+text = "6"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="BottomPanel/HBoxContainer/SkillStatBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/HBoxContainer2"]
+layout_mode = 2
+text = "Use:"
+
+[node name="Label2" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/HBoxContainer2"]
+layout_mode = 2
+text = "4"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="BottomPanel/HBoxContainer/SkillStatBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/HBoxContainer3"]
+layout_mode = 2
+text = "Hit:"
+
+[node name="Label2" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/HBoxContainer3"]
+layout_mode = 2
+text = "100"
+
+[node name="VSeparator3" type="VSeparator" parent="BottomPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="ActionsBox" type="VBoxContainer" parent="BottomPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="BottomPanel/HBoxContainer/ActionsBox"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "Scan"
+
+[node name="Button2" type="Button" parent="BottomPanel/HBoxContainer/ActionsBox"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "Items"
+
+[node name="Button3" type="Button" parent="BottomPanel/HBoxContainer/ActionsBox"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "Menu"
+
+[node name="Panel" type="Panel" parent="BottomPanel/HBoxContainer"]
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 2

@@ -14,6 +14,8 @@ var turns_arrangement = []
 
 
 func _ready() -> void:
+	ManagerGame.entity_action_finished.connect(on_entity_action_finished)
+	
 	ManagerGame.global_main_world_ref = self
 	
 	load_player_data()
@@ -90,6 +92,8 @@ func next_wave():
 	# sort_custom() documentation can be found in the "Array" section
 	turns_arrangement = get_tree().get_nodes_in_group("Entity")
 	turns_arrangement.sort_custom(sort_speed)
+	
+	
 
 
 func end_wave():
@@ -98,3 +102,7 @@ func end_wave():
 
 func end_round():
 	ManagerGame.round_finished
+
+
+func on_entity_action_finished():
+	pass
