@@ -9,6 +9,9 @@
 layer = 101
 script = ExtResource("1_g3ve3")
 
+[node name="Popups" type="CanvasLayer" parent="."]
+layer = 102
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
@@ -261,3 +264,16 @@ text = "Archer"
 layout_mode = 2
 theme_override_colors/font_color = Color(0.494647, 0.130382, 0.159486, 1)
 text = "Archer"
+
+[node name="Shop" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 87.0
+offset_right = 48.0
+offset_bottom = 118.0
+grow_horizontal = 2
+text = "Shop"
+
+[connection signal="pressed" from="Shop" to="." method="_on_shop_pressed"]

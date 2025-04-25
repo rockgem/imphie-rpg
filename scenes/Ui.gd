@@ -4,6 +4,8 @@ extends CanvasLayer
 
 
 func _ready() -> void:
+	ManagerGame.pop_to_ui.connect(on_pop_to_ui)
+	
 	clear_players()
 	
 	$BottomPanel.hide()
@@ -78,3 +80,16 @@ func on_attack_selected(attack_name: String):
 		$BottomPanel/HBoxContainer/SkillStatBox/SkillAttack/Label2.text = '%s' % int(current_entity_turn.data['attack'])
 	else:
 		$BottomPanel/HBoxContainer/SkillStatBox/SkillAttack/Label2.text = '%s' % int(skill_data['attack'])
+
+
+func _on_shop_pressed() -> void:
+	var i = load('res://actors/ui/ShopView.tscn').instantiate()
+	
+	ManagerGame.pop_to_ui.emit(i)
+
+
+func on_pop_to_ui(instance):
+	for child in $Popups.get_children():
+		child.queue_free()
+	
+	$Popups.add_child(instance)

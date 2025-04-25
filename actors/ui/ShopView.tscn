@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://djr6b0amu4lfw"]
+
+[ext_resource type="Script" uid="uid://oru17k40vcwb" path="res://actors/ui/ShopView.gd" id="1_ig8oy"]
+[ext_resource type="Shader" uid="uid://bvml75ss1uexp" path="res://reso/blur.gdshader" id="2_nfli6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dtu8k"]
+shader = ExtResource("2_nfli6")
+shader_parameter/blur_amount = 1.587
+shader_parameter/mix_amount = 0.0
+shader_parameter/color_over = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfli6"]
+bg_color = Color(0.180005, 0.180005, 0.180005, 1)
+
+[node name="ShopView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig8oy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_dtu8k")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 324.0
+offset_top = 72.0
+offset_right = -324.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nfli6")
+
+[node name="Close" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.0
+offset_top = -55.0
+offset_right = 63.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Close"
+
+[connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
