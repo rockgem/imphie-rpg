@@ -5,7 +5,6 @@ extends CanvasLayer
 
 func _ready() -> void:
 	ManagerGame.pop_to_ui.connect(on_pop_to_ui)
-	ManagerGame.wave_finished.connect(on_wave_finished)
 	
 	clear_players()
 	
@@ -16,7 +15,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	$HBoxContainer/RoundDisplay/RoundAmount.text = '%s' % ManagerGame.global_main_world_ref.round
+	$HBoxContainer/RoundDisplay/RoundAmount.text = '%s' % ManagerGame.global_main_world_ref.wave
 
 
 func clear_enemies_display():
@@ -99,7 +98,3 @@ func on_pop_to_ui(instance):
 		child.queue_free()
 	
 	$Popups.add_child(instance)
-
-
-func on_wave_finished():
-	$HBoxContainer/RoundDisplay/RoundAmount.text = '%s' % int(ManagerGame.global_main_world_ref.wave)

@@ -80,6 +80,7 @@ func next_round():
 	next_wave()
 	
 	ManagerGame.round_started.emit()
+	ManagerGame.wave_started.emit()
 
 
 func next_wave():
@@ -103,7 +104,8 @@ func next_wave():
 	else:
 		turns_arrangement[0].choose_random_player_attack()
 	
-	ManagerGame.wave_started.emit()
+	#ManagerGame.wave_finished.emit()
+	#ManagerGame.wave_started.emit()
 
 
 func end_round():
