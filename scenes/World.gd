@@ -102,14 +102,18 @@ func next_wave():
 		$UI.pop_bottom_panel(turns_arrangement[0])
 	else:
 		turns_arrangement[0].choose_random_player_attack()
+	
+	ManagerGame.wave_started.emit()
 
 
 func end_round():
 	ManagerGame.round_finished
 
 
-func on_wave_finished(is_win):
+func on_wave_finished(is_win: bool):
 	next_wave()
+	
+	return is_win
 
 
 func on_entity_action_finished():
@@ -121,10 +125,14 @@ func on_entity_action_finished():
 		elif entity.is_player == false and entity.is_dead == false:
 			alive_enemies.append(entity)
 	
+	# check and return from the function after every check or else the signals will
+	# emit multiple times, we only need it to emit once to load up new set of enemies!
 	if alive_enemies.is_empty():
 		ManagerGame.wave_finished.emit(true)
+		return
 	if alive_players.is_empty():
 		ManagerGame.wave_finished.emit(false)
+		return
 	
 	# here we basically just removed the first entity in the array ( because they already made their move )
 	# and push them at the back of the array, they will wait for their turn again
