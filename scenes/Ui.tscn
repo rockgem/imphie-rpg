@@ -165,7 +165,7 @@ text = "Buff"
 [node name="SkillDescription" type="Label" parent="BottomPanel/HBoxContainer/AttackOptionsBox"]
 layout_mode = 2
 text = "Skill Description here: %s"
-horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="VSeparator2" type="VSeparator" parent="BottomPanel/HBoxContainer"]
 layout_mode = 2

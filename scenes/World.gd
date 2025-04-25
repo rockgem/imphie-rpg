@@ -15,6 +15,7 @@ var turns_arrangement = []
 
 func _ready() -> void:
 	ManagerGame.entity_action_finished.connect(on_entity_action_finished)
+	ManagerGame.game_over.connect(on_game_over)
 	
 	ManagerGame.global_main_world_ref = self
 	
@@ -120,3 +121,10 @@ func on_entity_action_finished():
 	else:
 		$UI.hide_bottom_panel()
 		turns_arrangement[0].choose_random_player_attack()
+
+
+func on_game_over(is_win):
+	if is_win:
+		pass
+	else:
+		pass

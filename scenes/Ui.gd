@@ -7,6 +7,9 @@ func _ready() -> void:
 	clear_players()
 	
 	$BottomPanel.hide()
+	
+	for skill_button in $BottomPanel/HBoxContainer/AttackOptionsBox/HBoxContainer.get_children():
+		skill_button.pressed.connect(on_attack_selected.bind(skill_button.text))
 
 
 func _physics_process(delta: float) -> void:
@@ -47,3 +50,9 @@ func pop_bottom_panel(entity: Entity):
 func hide_bottom_panel():
 	
 	$BottomPanel.hide()
+
+
+func on_attack_selected(attack_name: String):
+	var skill_data = ManagerGame.skills_data[attack_name]
+	
+	$BottomPanel/HBoxContainer/AttackOptionsBox/SkillDescription.text =  skill_data['desc']
