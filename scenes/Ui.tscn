@@ -139,6 +139,7 @@ layout_mode = 2
 [node name="Attack" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/HBoxContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
+focus_mode = 0
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_g3ve3")
@@ -147,6 +148,7 @@ text = "Attack"
 [node name="Heal" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/HBoxContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
+focus_mode = 0
 toggle_mode = true
 button_group = SubResource("ButtonGroup_g3ve3")
 text = "Heal"
@@ -154,6 +156,7 @@ text = "Heal"
 [node name="Bolt" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/HBoxContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
+focus_mode = 0
 toggle_mode = true
 button_group = SubResource("ButtonGroup_g3ve3")
 text = "Bolt"
@@ -161,6 +164,7 @@ text = "Bolt"
 [node name="Buff" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/HBoxContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
+focus_mode = 0
 toggle_mode = true
 button_group = SubResource("ButtonGroup_g3ve3")
 text = "Buff"
@@ -219,16 +223,19 @@ layout_mode = 2
 [node name="Button" type="Button" parent="BottomPanel/HBoxContainer/ActionsBox"]
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
+focus_mode = 0
 text = "Scan"
 
 [node name="Button2" type="Button" parent="BottomPanel/HBoxContainer/ActionsBox"]
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
+focus_mode = 0
 text = "Items"
 
 [node name="Button3" type="Button" parent="BottomPanel/HBoxContainer/ActionsBox"]
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
+focus_mode = 0
 text = "Menu"
 
 [node name="Panel" type="Panel" parent="BottomPanel/HBoxContainer"]
