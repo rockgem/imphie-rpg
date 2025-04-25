@@ -11,34 +11,34 @@ script = ExtResource("1_32lhk")
 [node name="PlayerSpawnPoints" type="Node2D" parent="."]
 
 [node name="PlayerSpawnPoint" type="Node2D" parent="PlayerSpawnPoints"]
-position = Vector2(264, 220)
+position = Vector2(264, 183)
 
 [node name="PlayerSpawnPoint2" type="Node2D" parent="PlayerSpawnPoints"]
-position = Vector2(359, 326)
+position = Vector2(359, 289)
 
 [node name="PlayerSpawnPoint3" type="Node2D" parent="PlayerSpawnPoints"]
-position = Vector2(264, 441)
+position = Vector2(264, 404)
 
 [node name="PlayerSpawnPoint4" type="Node2D" parent="PlayerSpawnPoints"]
-position = Vector2(134, 220)
+position = Vector2(134, 183)
 
 [node name="PlayerSpawnPoint5" type="Node2D" parent="PlayerSpawnPoints"]
-position = Vector2(134, 441)
+position = Vector2(134, 404)
 
 [node name="EnemySpawnPoints" type="Node2D" parent="."]
 position = Vector2(442, 0)
 
 [node name="PlayerSpawnPoint2" type="Node2D" parent="EnemySpawnPoints"]
-position = Vector2(359, 326)
+position = Vector2(359, 289)
 
 [node name="PlayerSpawnPoint4" type="Node2D" parent="EnemySpawnPoints"]
-position = Vector2(440, 220)
+position = Vector2(440, 183)
 
 [node name="PlayerSpawnPoint5" type="Node2D" parent="EnemySpawnPoints"]
-position = Vector2(440, 441)
+position = Vector2(440, 404)
 
 [node name="PlayerSpawnPoint" type="Node2D" parent="EnemySpawnPoints"]
-position = Vector2(570, 220)
+position = Vector2(570, 183)
 
 [node name="PlayerSpawnPoint3" type="Node2D" parent="EnemySpawnPoints"]
-position = Vector2(570, 441)
+position = Vector2(570, 404)
