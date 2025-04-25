@@ -115,7 +115,7 @@ func on_entity_action_finished():
 	
 	# after the array has shifted, the previously second entity that were waiting for their turn,
 	# are now at the first place, so they will now execute their turn
-	if turns_arrangement[0].is_player:
+	if turns_arrangement[0].is_player and turns_arrangement[0].is_dead == false:
 		$UI.pop_bottom_panel(turns_arrangement[0])
 	else:
 		$UI.hide_bottom_panel()

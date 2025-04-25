@@ -9,6 +9,7 @@ signal clicked(own)
 
 
 @export var is_player = true
+@export var is_dead = false
 
 # in this dictionary, we store the entity's hp, mana, exp etc.
 var data = {}
@@ -28,6 +29,14 @@ func receive_damage(damage = 1):
 	df.get_node('Label').text = '%s' % int(damage)
 	
 	add_child(df)
+	
+	if data['hp'] <= 0:
+		is_dead = true
+		data['hp'] = 0
+		
+		hide()
+		
+		#queue_free()
 
 
 func attack(entity: Entity):
@@ -54,7 +63,7 @@ func choose_random_player_attack():
 	var players: Array[Entity] = []
 	
 	for e: Entity in entities:
-		if e.is_player:
+		if e.is_player and e.is_dead == false:
 			players.append(e)
 	
 	players.shuffle()
