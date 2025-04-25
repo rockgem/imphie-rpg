@@ -6,6 +6,7 @@
 [sub_resource type="ButtonGroup" id="ButtonGroup_g3ve3"]
 
 [node name="UI" type="CanvasLayer"]
+process_mode = 3
 layer = 101
 script = ExtResource("1_g3ve3")
 

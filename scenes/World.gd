@@ -15,7 +15,7 @@ var turns_arrangement = []
 
 func _ready() -> void:
 	ManagerGame.entity_action_finished.connect(on_entity_action_finished)
-	ManagerGame.game_over.connect(on_game_over)
+	ManagerGame.wave_finished.connect(on_wave_finished)
 	
 	ManagerGame.global_main_world_ref = self
 	
@@ -100,15 +100,28 @@ func next_wave():
 		turns_arrangement[0].choose_random_player_attack()
 
 
-func end_wave():
-	pass
-
-
 func end_round():
 	ManagerGame.round_finished
 
 
+func on_wave_finished():
+	generate_enemies()
+
+
 func on_entity_action_finished():
+	var alive_enemies = []
+	var alive_players = []
+	for entity: Entity in turns_arrangement:
+		if entity.is_player and entity.is_dead == false:
+			alive_players.append(entity)
+		elif entity.is_player == false and entity.is_dead == false:
+			alive_enemies.append(entity)
+	
+	if alive_enemies.is_empty():
+		ManagerGame.wave_finished.emit(true)
+	if alive_players.is_empty():
+		ManagerGame.wave_finished.emit(false)
+	
 	# here we basically just removed the first entity in the array ( because they already made their move )
 	# and push them at the back of the array, they will wait for their turn again
 	var first = turns_arrangement.pop_front()
@@ -121,10 +134,3 @@ func on_entity_action_finished():
 	else:
 		$UI.hide_bottom_panel()
 		turns_arrangement[0].choose_random_player_attack()
-
-
-func on_game_over(is_win):
-	if is_win:
-		pass
-	else:
-		pass
