@@ -7,6 +7,7 @@ signal wave_finished
 signal wave_started
 signal entity_action_finished
 signal game_over(is_win)
+signal wave_over(is_win)
 signal pop_to_ui(instance)
 signal inventory_changed
 
