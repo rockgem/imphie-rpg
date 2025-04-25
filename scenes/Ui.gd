@@ -18,6 +18,11 @@ func _physics_process(delta: float) -> void:
 	$HBoxContainer/RoundDisplay/RoundAmount.text = '%s' % ManagerGame.global_main_world_ref.round
 
 
+func clear_enemies_display():
+	for child in $HBoxContainer/EnemyCharactersBox.get_children():
+		child.queue_free()
+
+
 func clear_players():
 	for child in $HBoxContainer/PlayerCharactersBox.get_children():
 		child.queue_free()

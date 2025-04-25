@@ -20,7 +20,7 @@ func _ready() -> void:
 	ManagerGame.global_main_world_ref = self
 	
 	load_player_data()
-	generate_enemies()
+	#generate_enemies()
 	
 	next_round()
 
@@ -48,6 +48,8 @@ func load_player_data():
 # this is pretty much the same as the load_player_data() function
 # but this loads up the enemies from enemies.json
 func generate_enemies():
+	$UI.clear_enemies_display()
+	
 	var enemies = ManagerGame.get_data("res://reso/data/enemies.json")
 	
 	var count = 0
@@ -81,6 +83,8 @@ func next_round():
 
 
 func next_wave():
+	generate_enemies()
+	
 	wave += 1
 	
 	if wave > 10:
@@ -104,8 +108,8 @@ func end_round():
 	ManagerGame.round_finished
 
 
-func on_wave_finished():
-	generate_enemies()
+func on_wave_finished(is_win):
+	next_wave()
 
 
 func on_entity_action_finished():
