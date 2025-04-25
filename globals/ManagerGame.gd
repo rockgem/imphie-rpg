@@ -8,6 +8,7 @@ signal wave_started
 signal entity_action_finished
 signal game_over(is_win)
 signal pop_to_ui(instance)
+signal inventory_changed
 
 
 # here we reference the entire game level / the game world so we can easily access things

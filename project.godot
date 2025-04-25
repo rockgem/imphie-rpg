@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ManagerGame="*res://globals/ManagerGame.tscn"
+UIAnimation="*res://addons/godot_ui_animations/UIAnimationHandler.tscn"
 
 [display]
 
@@ -27,6 +28,10 @@ window/stretch/mode="canvas_items"
 
 naming/scene_name_casing=1
 naming/script_name_casing=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_ui_animations/plugin.cfg")
 
 [global_group]
 
