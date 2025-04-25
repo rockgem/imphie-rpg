@@ -20,6 +20,16 @@ func _ready() -> void:
 		return
 	
 	$Sprite2D/Name.text = '%s' % data['name']
+	
+	# dynamically loading the entity's textures ( see reso://sprites/entities )
+	# these are just bunch of AtlasTextures using the entity's "name" to load the appropriate sprite
+	# for now, this is the easy way of loading it since the sprites are static and have no animations yet.
+	# in the future, is you want the mobs and characters to move, you will be using AnimatedSprite2D node
+	# and instead of loading an AtlasTexture, you will be loading a SpriteFrames resource instead ( this is a bit more advanced )
+	$Sprite2D.texture = load("res://reso/sprites/entities/%s.tres" % data['name'])
+	
+	if is_player == false:
+		$Sprite2D.flip_h = true
 
 
 func receive_damage(damage = 1):

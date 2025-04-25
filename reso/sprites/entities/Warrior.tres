@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cfklg41b78qmj"]
+
+[ext_resource type="Texture2D" uid="uid://defkmd3h7c71y" path="res://art/entities/Characters(100x100)/Swordsman/Swordsman/Swordsman-Idle.png" id="1_bln5i"]
+
+[resource]
+atlas = ExtResource("1_bln5i")
+region = Rect2(0, 0, 100, 100)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4ggmf4ckbqgt"]
+[gd_scene load_steps=6 format=3 uid="uid://b4ggmf4ckbqgt"]
 
 [ext_resource type="Script" uid="uid://q11jmts3slnj" path="res://actors/ui/CharacterStatDisplay.gd" id="1_cwbe0"]
 
@@ -7,6 +7,12 @@ bg_color = Color(0.160784, 0.184314, 0.156863, 0.784314)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_holap"]
 bg_color = Color(0.354662, 0.545561, 0.28537, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68hwa"]
+bg_color = Color(0.192157, 0.192157, 0.192157, 0.552941)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dt3t"]
+bg_color = Color(0.307571, 0.489174, 0.672856, 1)
 
 [node name="CharacterStatDisplay" type="VBoxContainer"]
 offset_right = 444.0
@@ -70,6 +76,9 @@ grow_vertical = 2
 text = "100"
 
 [node name="ManaBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_68hwa")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5dt3t")
 value = 25.0
 show_percentage = false

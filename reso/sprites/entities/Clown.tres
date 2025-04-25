@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b18vbdr1eq5m6"]
+
+[ext_resource type="Texture2D" uid="uid://c8j2rjca3vgdg" path="res://art/entities/Characters(100x100)/Werewolf/Werewolf/Werewolf-Idle.png" id="1_nelxa"]
+
+[resource]
+atlas = ExtResource("1_nelxa")
+region = Rect2(0, 0, 100, 100)

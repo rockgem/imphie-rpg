@@ -1,9 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bv7n5saufen75"]
 
 [ext_resource type="Script" uid="uid://dbwywqrqsg8ap" path="res://actors/entities/Entity.gd" id="1_8b186"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8b186"]
-size = Vector2(64, 64)
+[ext_resource type="Texture2D" uid="uid://btshechntiofq" path="res://reso/sprites/entities/Mage.tres" id="2_0umhn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8b186"]
 radius = 44.0114
@@ -12,21 +10,24 @@ radius = 44.0114
 script = ExtResource("1_8b186")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_8b186")
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_0umhn")
 
 [node name="Name" type="Label" parent="Sprite2D"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -72.0
-offset_top = -39.0
-offset_right = 9.0
-offset_bottom = -25.0
+offset_left = -90.5
+offset_top = -57.0
+offset_right = -9.5
+offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 7
 text = "Class Type"
 horizontal_alignment = 1
 

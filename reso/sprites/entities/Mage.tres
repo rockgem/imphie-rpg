@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://btshechntiofq"]
+
+[ext_resource type="Texture2D" uid="uid://dvatmn3xd25pm" path="res://art/entities/Characters(100x100)/Priest/Priest/Priest-Idle.png" id="1_tqutv"]
+
+[resource]
+atlas = ExtResource("1_tqutv")
+region = Rect2(0, 0, 100, 100)
