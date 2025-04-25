@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d28cddmf8a6us"]
+[gd_scene load_steps=4 format=3 uid="uid://d28cddmf8a6us"]
 
 [ext_resource type="Script" uid="uid://cb5w077adpvvu" path="res://scenes/World.gd" id="1_32lhk"]
 [ext_resource type="PackedScene" uid="uid://b2qocxec5lcq0" path="res://scenes/Ui.tscn" id="2_32lhk"]
+[ext_resource type="Texture2D" uid="uid://3o17k6ytpdbt" path="res://art/battleback1.png" id="3_7g83o"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_32lhk")
@@ -42,3 +43,9 @@ position = Vector2(570, 183)
 
 [node name="PlayerSpawnPoint3" type="Node2D" parent="EnemySpawnPoints"]
 position = Vector2(570, 404)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-41, -27)
+scale = Vector2(1.10628, 1.10628)
+texture = ExtResource("3_7g83o")
+centered = false

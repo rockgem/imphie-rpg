@@ -47,6 +47,19 @@ func pop_bottom_panel(entity: Entity):
 	on_attack_selected('Attack')
 	
 	$BottomPanel.show()
+	
+	for child in $BottomPanel/TurnsDisplayBox.get_children():
+		child.queue_free()
+	
+	for e in ManagerGame.global_main_world_ref.turns_arrangement:
+		if e.is_dead == false:
+			var l = Label.new()
+			l.text = e.data['name']
+			
+			if e.is_player == false:
+				l.set('theme_override_colors/font_color', Color.RED)
+			
+			$BottomPanel/TurnsDisplayBox.add_child(l)
 
 
 func hide_bottom_panel():

@@ -39,7 +39,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer/RoundDisplay"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Round"
+text = "Wave"
 
 [node name="RoundAmount" type="Label" parent="HBoxContainer/RoundDisplay"]
 layout_mode = 2
@@ -68,9 +68,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -445.0
-offset_top = -167.0
+offset_top = -195.0
 offset_right = 445.0
-offset_bottom = -16.0
+offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -231,3 +231,33 @@ text = "Menu"
 [node name="Panel" type="Panel" parent="BottomPanel/HBoxContainer"]
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
+
+[node name="TurnsDisplayBox" type="HBoxContainer" parent="BottomPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -438.0
+offset_top = 156.0
+offset_right = 438.0
+offset_bottom = 179.0
+grow_horizontal = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="BottomPanel/TurnsDisplayBox"]
+layout_mode = 2
+text = "Warrior"
+
+[node name="Label2" type="Label" parent="BottomPanel/TurnsDisplayBox"]
+layout_mode = 2
+text = "Mage"
+
+[node name="Label3" type="Label" parent="BottomPanel/TurnsDisplayBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.231258, 0.552229, 0.20814, 1)
+text = "Archer"
+
+[node name="Label4" type="Label" parent="BottomPanel/TurnsDisplayBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.494647, 0.130382, 0.159486, 1)
+text = "Archer"

@@ -13,6 +13,11 @@ func _ready() -> void:
 		return
 	
 	$Stats/HPBar/Name.text = '%s' % entity_ref.data['name']
+	
+	# if the entity is an enemy, set the hp bar to display reverse
+	if entity_ref.is_player == false:
+		$Stats/HPBar.fill_mode = $Stats/HPBar.FILL_END_TO_BEGIN
+		$ManaBar.fill_mode = $ManaBar.FILL_END_TO_BEGIN
 
 
 func _physics_process(delta: float) -> void:
@@ -29,3 +34,7 @@ func _physics_process(delta: float) -> void:
 		
 		$ManaBar.value = entity_ref.data['mana']
 		$ManaBar.max_value = entity_ref.data['mana_max']
+		
+		# set the text of the entity's HP to "DEAD" when their hp is 0
+		if entity_ref.data['hp'] <= 0:
+			$Stats/HPBar/HPCurrent.text = 'DEAD'
