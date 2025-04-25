@@ -39,3 +39,11 @@ func get_data(path):
 	j.parse(f.get_as_text())
 	
 	return j.data
+
+
+func add_item_to_inv(data, amount = 1):
+	if ManagerGame.player_data['inv'].has(data['name']):
+		ManagerGame.player_data['inv'][data['name']]['amount'] += amount
+	else:
+		ManagerGame.player_data['inv'][data['name']] = data.duplicate()
+		ManagerGame.player_data['inv'][data['name']]['amount'] = 1

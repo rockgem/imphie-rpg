@@ -51,7 +51,7 @@ func _on_buy_final_pressed() -> void:
 	if current_item_selected == null:
 		return
 	
-	
+	ManagerGame.add_item_to_inv(current_item_selected.data, $ConfimationPanel/Icon/Amount.value)
 	
 	ManagerGame.player_data['gold'] -= $ConfimationPanel/Icon/Amount.value * current_item_selected.data['price']
 	ManagerGame.inventory_changed.emit()
