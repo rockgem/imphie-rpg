@@ -17,12 +17,14 @@ var global_main_world_ref: MainWorld
 
 
 var player_data = {}
+var items_data = {}
 var skills_data = {}
 
 
 func _ready() -> void:
 	player_data = get_data("res://reso/data/player_data.json")
 	skills_data = get_data("res://reso/data/skills_data.json")
+	items_data = get_data("res://reso/data/items_data.json")
 	var characters = get_data("res://reso/data/characters.json")
 	
 	# add the starting characters into player_data :D

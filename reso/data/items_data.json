@@ -1,0 +1,14 @@
+{
+	"small_hp_potion": {
+		"price": 10,
+		"desc": "Restores HP when consumed.",
+		"name": "Small HP Potion",
+		"icon": "res://reso/icons/small_hp_potion.tres"
+	},
+	"large_hp_potion": {
+		"price": 25,
+		"desc": "Restores HP when consumed.",
+		"name": "Large HP Potion",
+		"icon": "res://reso/icons/large_hp_potion.tres"
+	}
+}

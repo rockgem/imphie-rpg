@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://cndckue71iy2c"]
+
+[ext_resource type="Script" uid="uid://cxf62a40jwcgr" path="res://actors/ui/ShopItemDisplay.gd" id="1_5hpux"]
+[ext_resource type="Texture2D" uid="uid://nrvhkrlol55v" path="res://reso/icons/large_hp_potion.tres" id="1_x1isu"]
+[ext_resource type="Texture2D" uid="uid://2ncxxjjt1422" path="res://art/icons/Icon sheet (16x16).png" id="2_3d810"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hpux"]
+atlas = ExtResource("2_3d810")
+region = Rect2(96, 432, 16, 16)
+
+[node name="ShopItemDisplay" type="HBoxContainer"]
+offset_right = 464.0
+offset_bottom = 23.0
+size_flags_vertical = 3
+script = ExtResource("1_5hpux")
+
+[node name="Icon" type="TextureRect" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("1_x1isu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemName" type="Label" parent="."]
+layout_mode = 2
+text = "Item Name"
+
+[node name="Desc" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.811414, 0.390842, 0.371846, 1)
+text = "Description of the item Description of the item Description of the item"
+text_overrun_behavior = 3
+
+[node name="Price" type="Label" parent="."]
+custom_minimum_size = Vector2(86, 0)
+layout_mode = 2
+text = "$500"
+text_overrun_behavior = 3
+
+[node name="Icon" type="TextureRect" parent="Price"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 69.0
+offset_top = -16.0
+offset_right = 101.0
+offset_bottom = 16.0
+grow_vertical = 2
+texture = SubResource("AtlasTexture_5hpux")
+expand_mode = 1
+stretch_mode = 5
