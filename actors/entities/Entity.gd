@@ -59,6 +59,12 @@ func attack(entity: Entity):
 # this is only going to be used for ENEMY type entities,
 # it automatically attacks random player characters
 func choose_random_player_attack():
+	
+	# check if the entity is already dead, if so, skip the action by calling entity_action_finished
+	if is_dead:
+		ManagerGame.entity_action_finished.emit()
+		return
+	
 	var entities = get_tree().get_nodes_in_group("Entity")
 	var players: Array[Entity] = []
 	

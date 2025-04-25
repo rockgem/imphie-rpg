@@ -171,38 +171,39 @@ autowrap_mode = 2
 layout_mode = 2
 
 [node name="SkillStatBox" type="VBoxContainer" parent="BottomPanel/HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BottomPanel/HBoxContainer/SkillStatBox"]
+[node name="SkillAttack" type="HBoxContainer" parent="BottomPanel/HBoxContainer/SkillStatBox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/HBoxContainer"]
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/SkillAttack"]
 layout_mode = 2
 text = "Dmg:"
 
-[node name="Label2" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/HBoxContainer"]
+[node name="Label2" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/SkillAttack"]
 layout_mode = 2
 text = "6"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="BottomPanel/HBoxContainer/SkillStatBox"]
+[node name="SkillUses" type="HBoxContainer" parent="BottomPanel/HBoxContainer/SkillStatBox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/HBoxContainer2"]
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/SkillUses"]
 layout_mode = 2
 text = "Use:"
 
-[node name="Label2" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/HBoxContainer2"]
+[node name="Label2" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/SkillUses"]
 layout_mode = 2
 text = "4"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="BottomPanel/HBoxContainer/SkillStatBox"]
+[node name="SkillHitChance" type="HBoxContainer" parent="BottomPanel/HBoxContainer/SkillStatBox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/HBoxContainer3"]
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/SkillHitChance"]
 layout_mode = 2
 text = "Hit:"
 
-[node name="Label2" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/HBoxContainer3"]
+[node name="Label2" type="Label" parent="BottomPanel/HBoxContainer/SkillStatBox/SkillHitChance"]
 layout_mode = 2
 text = "100"
 

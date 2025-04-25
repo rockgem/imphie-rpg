@@ -1,7 +1,7 @@
 {
 	"Attack": {
 		"desc": "A normal melee attack",
-		"attack": 2,
+		"attack": 4,
 		"mana_cost": 0,
 		"target": "enemy",
 		"target_type": "single",
@@ -9,7 +9,7 @@
 	},
 	"Heal": {
 		"desc": "Restores some health of any teamate",
-		"attack": 2,
+		"attack": 10,
 		"mana_cost": 10,
 		"target": "team",
 		"target_type": "single",

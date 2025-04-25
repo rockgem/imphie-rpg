@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var attack_queue = {}
+#var attack_queue = {}
 
 
 func _ready() -> void:
@@ -44,6 +44,8 @@ func pop_bottom_panel(entity: Entity):
 	$BottomPanel/HBoxContainer/StatBox/EntityDefense/Label2.text = '%s' % int(entity.data['defense'])
 	$BottomPanel/HBoxContainer/StatBox/EntitySpeed/Label2.text = '%s' % int(entity.data['speed'])
 	
+	on_attack_selected('Attack')
+	
 	$BottomPanel.show()
 
 
@@ -55,4 +57,11 @@ func hide_bottom_panel():
 func on_attack_selected(attack_name: String):
 	var skill_data = ManagerGame.skills_data[attack_name]
 	
-	$BottomPanel/HBoxContainer/AttackOptionsBox/SkillDescription.text =  skill_data['desc']
+	$BottomPanel/HBoxContainer/AttackOptionsBox/SkillDescription.text = skill_data['desc']
+	
+	# attack is a melee attack ( based on the character's attack value itself )
+	if attack_name == 'Attack':
+		var current_entity_turn = ManagerGame.global_main_world_ref.turns_arrangement[0]
+		$BottomPanel/HBoxContainer/SkillStatBox/SkillAttack/Label2.text = '%s' % int(current_entity_turn.data['attack'])
+	else:
+		$BottomPanel/HBoxContainer/SkillStatBox/SkillAttack/Label2.text = '%s' % int(skill_data['attack'])
