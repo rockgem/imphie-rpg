@@ -84,6 +84,11 @@ func next_round():
 
 
 func next_wave():
+	# pops up shop view before every level starts
+	if wave != 0:
+		var i = load('res://actors/ui/ShopView.tscn').instantiate()
+		ManagerGame.pop_to_ui.emit(i)
+	
 	generate_enemies()
 	
 	wave += 1

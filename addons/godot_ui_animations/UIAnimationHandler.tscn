@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://ddqrdjtnx86gw" path="res://addons/godot_ui_animations/UiAnimationHandler.gd" id="1_gqgmu"]
 
 [node name="UiAnimationHandler" type="Node"]
+process_mode = 3
 script = ExtResource("1_gqgmu")

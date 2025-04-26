@@ -274,6 +274,7 @@ theme_override_colors/font_color = Color(0.494647, 0.130382, 0.159486, 1)
 text = "Archer"
 
 [node name="Shop" type="Button" parent="."]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

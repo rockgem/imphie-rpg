@@ -26,6 +26,10 @@ func _ready() -> void:
 		$Panel/ScrollContainer/List.add_child(i)
 	
 	on_inventory_changed()
+	
+	# it is important to pause the scene tree when this view is active, this essentially
+	# pauses the game until this view is closed
+	get_tree().paused = true
 
 
 func on_initiate_buy(ref):
@@ -40,6 +44,7 @@ func on_initiate_buy(ref):
 func _on_close_pressed() -> void:
 	await UIAnimation.animate_slide_to_right(self)
 	
+	get_tree().paused = false
 	queue_free()
 
 
