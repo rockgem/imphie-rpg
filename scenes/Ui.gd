@@ -38,7 +38,7 @@ func add_player_display(entity_ref: Entity):
 
 
 func add_enemy_display(entity_ref: Entity):
-	var display = load('res://actors/ui/CharacterStatDisplay.tscn').instantiate()
+	var display = load('res://actors/ui/CharacterStatDisplayFlipped.tscn').instantiate()
 	display.entity_ref = entity_ref
 	
 	$HBoxContainer/EnemyCharactersBox.add_child(display)

@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4ggmf4ckbqgt"]
+[gd_scene load_steps=6 format=3 uid="uid://bbgwc57mufdvw"]
 
-[ext_resource type="Script" uid="uid://q11jmts3slnj" path="res://actors/ui/CharacterStatDisplay.gd" id="1_cwbe0"]
+[ext_resource type="Script" uid="uid://q11jmts3slnj" path="res://actors/ui/CharacterStatDisplay.gd" id="1_dlo8x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwbe0"]
 bg_color = Color(0.160784, 0.184314, 0.156863, 0.784314)
@@ -18,7 +18,7 @@ bg_color = Color(0.307571, 0.489174, 0.672856, 1)
 offset_right = 444.0
 offset_bottom = 28.0
 size_flags_vertical = 3
-script = ExtResource("1_cwbe0")
+script = ExtResource("1_dlo8x")
 
 [node name="Stats" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -36,19 +36,6 @@ show_percentage = false
 [node name="Name" type="Label" parent="Stats/HPBar"]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 8.0
-offset_top = -11.5
-offset_right = 98.0
-offset_bottom = 11.5
-grow_vertical = 2
-text = "Mage"
-
-[node name="HPCurrent" type="Label" parent="Stats/HPBar"]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -60,24 +47,35 @@ offset_right = -10.0
 offset_bottom = 11.5
 grow_horizontal = 0
 grow_vertical = 2
-text = "40"
+text = "Mage"
 horizontal_alignment = 2
+
+[node name="HPCurrent" type="Label" parent="Stats/HPBar"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -11.5
+offset_right = 97.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "40"
 
 [node name="HPMax" type="Label" parent="Stats/HPBar"]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 6.0
+offset_left = -94.0
 offset_top = -11.5
-offset_right = 96.0
+offset_right = -4.0
 offset_bottom = 11.5
-grow_horizontal = 0
 grow_vertical = 2
 text = "100"
+horizontal_alignment = 2
 
 [node name="ManaBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(0, 5)
