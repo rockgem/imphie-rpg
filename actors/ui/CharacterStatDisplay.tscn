@@ -16,13 +16,14 @@ bg_color = Color(0.307571, 0.489174, 0.672856, 1)
 
 [node name="CharacterStatDisplay" type="VBoxContainer"]
 offset_right = 444.0
-offset_bottom = 28.0
+offset_bottom = 33.0
 size_flags_vertical = 3
+theme_override_constants/separation = 0
 script = ExtResource("1_cwbe0")
 
 [node name="Stats" type="HBoxContainer" parent="."]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 2
 
 [node name="HPBar" type="ProgressBar" parent="Stats"]
 custom_minimum_size = Vector2(0, 28)

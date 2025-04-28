@@ -18,6 +18,7 @@ bg_color = Color(0.307571, 0.489174, 0.672856, 1)
 offset_right = 444.0
 offset_bottom = 28.0
 size_flags_vertical = 3
+theme_override_constants/separation = 0
 script = ExtResource("1_dlo8x")
 
 [node name="Stats" type="HBoxContainer" parent="."]
