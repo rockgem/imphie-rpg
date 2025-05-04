@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvecrf82tbpe4"]
+
+[ext_resource type="Script" uid="uid://coux11wg0j28h" path="res://actors/ui/SkillRefillDisplay.gd" id="1_pjb5d"]
+[ext_resource type="Texture2D" uid="uid://fenrh73ytpq7" path="res://reso/icons/gold.tres" id="2_tk3m5"]
+
+[node name="SkillRefillDisplay" type="HBoxContainer"]
+script = ExtResource("1_pjb5d")
+
+[node name="SkillName" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Attack"
+
+[node name="Amount" type="Label" parent="."]
+layout_mode = 2
+text = "x5"
+
+[node name="Add" type="Button" parent="."]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "500"
+icon = ExtResource("2_tk3m5")
+
+[connection signal="pressed" from="Add" to="." method="_on_add_pressed"]

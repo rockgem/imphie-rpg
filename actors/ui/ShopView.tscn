@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://djr6b0amu4lfw"]
+[gd_scene load_steps=14 format=3 uid="uid://djr6b0amu4lfw"]
 
 [ext_resource type="Script" uid="uid://oru17k40vcwb" path="res://actors/ui/ShopView.gd" id="1_ig8oy"]
 [ext_resource type="Shader" uid="uid://bvml75ss1uexp" path="res://reso/blur.gdshader" id="2_nfli6"]
 [ext_resource type="Texture2D" uid="uid://c2bpc6nj70wth" path="res://art/ui/UI assets (1x).png" id="3_1acgs"]
 [ext_resource type="PackedScene" uid="uid://cndckue71iy2c" path="res://actors/ui/ShopItemDisplay.tscn" id="3_dtu8k"]
+[ext_resource type="PackedScene" uid="uid://cvecrf82tbpe4" path="res://actors/ui/SkillRefillDisplay.tscn" id="4_g3ofm"]
 [ext_resource type="Texture2D" uid="uid://2ncxxjjt1422" path="res://art/icons/Icon sheet (16x16).png" id="4_iax1d"]
 [ext_resource type="Texture2D" uid="uid://nrvhkrlol55v" path="res://reso/icons/large_hp_potion.tres" id="6_p7lmq"]
 
@@ -20,6 +21,17 @@ texture_margin_top = 11.0
 texture_margin_right = 11.0
 texture_margin_bottom = 11.0
 region_rect = Rect2(6, 6, 36, 36)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7lmq"]
+texture = ExtResource("3_1acgs")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(102, 6, 36, 36)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p7lmq"]
+load_path = "res://.godot/imported/UI assets (1x).png-84ffb520f32cea32b65737cc654c4be4.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p7lmq"]
 atlas = ExtResource("4_iax1d")
@@ -60,6 +72,73 @@ offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_iax1d")
+
+[node name="SkillsPanel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = -275.0
+offset_top = 53.0
+offset_right = -21.0
+offset_bottom = 432.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_p7lmq")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Panel/SkillsPanel"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_top = -10.0
+offset_right = 94.0
+offset_bottom = 15.0
+grow_horizontal = 2
+texture = SubResource("CompressedTexture2D_p7lmq")
+region_rect = Rect2(1, 69, 46, 19)
+patch_margin_left = 11
+patch_margin_right = 11
+
+[node name="Label2" type="Label" parent="Panel/SkillsPanel/NinePatchRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -14.0
+offset_right = 87.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Refill your skills!"
+horizontal_alignment = 1
+
+[node name="SkillsList" type="VBoxContainer" parent="Panel/SkillsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -119.5
+offset_right = 102.0
+offset_bottom = 119.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="SkillRefillDisplay" parent="Panel/SkillsPanel/SkillsList" instance=ExtResource("4_g3ofm")]
+layout_mode = 2
+
+[node name="SkillRefillDisplay2" parent="Panel/SkillsPanel/SkillsList" instance=ExtResource("4_g3ofm")]
+layout_mode = 2
+
+[node name="SkillRefillDisplay3" parent="Panel/SkillsPanel/SkillsList" instance=ExtResource("4_g3ofm")]
+layout_mode = 2
+
+[node name="SkillRefillDisplay4" parent="Panel/SkillsPanel/SkillsList" instance=ExtResource("4_g3ofm")]
+layout_mode = 2
 
 [node name="Close" type="Button" parent="Panel"]
 layout_mode = 1

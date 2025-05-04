@@ -9,6 +9,7 @@ signal entity_action_finished
 signal game_over(is_win)
 signal pop_to_ui(instance)
 signal inventory_changed
+signal player_data_changed
 
 
 # here we reference the entire game level / the game world so we can easily access things
@@ -18,7 +19,12 @@ var global_main_world_ref: MainWorld
 var global_ui_ref: UI
 
 
-var player_data = {}
+var player_data = {} : 
+	set(value):
+		player_data = value
+		
+		print('hoy')
+		player_data_changed.emit()
 var items_data = {}
 var skills_data = {}
 

@@ -10,7 +10,7 @@ var current_item_selected
 
 
 func _ready() -> void:
-	ManagerGame.inventory_changed.connect(on_inventory_changed)
+	ManagerGame.player_data_changed.connect(on_player_data_changed)
 	
 	UIAnimation.animate_slide_from_right(self)
 	
@@ -25,12 +25,24 @@ func _ready() -> void:
 		
 		$Panel/ScrollContainer/List.add_child(i)
 	
-	on_inventory_changed()
+	on_player_data_changed()
+	
+	for child in $Panel/SkillsPanel/SkillsList.get_children():
+		child.queue_free()
+	
+	for skill in ManagerGame.skills_data:
+		var i = load('res://actors/ui/SkillRefillDisplay.tscn').instantiate()
+		i.data = ManagerGame.skills_data[skill]
+		
+		$Panel/SkillsPanel/SkillsList.add_child(i)
 	
 	# it is important to pause the scene tree when this view is active, this essentially
 	# pauses the game until this view is closed
 	get_tree().paused = true
 
+
+func _physics_process(delta: float) -> void:
+	$Panel/Gold.text = '%s' % int(ManagerGame.player_data['gold'])
 
 func on_initiate_buy(ref):
 	current_item_selected = ref
@@ -62,5 +74,5 @@ func _on_buy_final_pressed() -> void:
 	ManagerGame.inventory_changed.emit()
 
 
-func on_inventory_changed():
+func on_player_data_changed():
 	$Panel/Gold.text = '%s' % int(ManagerGame.player_data['gold'])

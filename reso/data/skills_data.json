@@ -1,35 +1,39 @@
 {
 	"Attack": {
+		"name": "Attack",
 		"desc": "A normal melee attack",
 		"attack": 4,
-		"mana_cost": 0,
+		"refill_cost": 8,
 		"uses_count": 10,
 		"target": ["team","enemy"],
 		"target_type": "single",
 		"attack_type": "melee"
 	},
 	"Heal": {
+		"name": "Heal",
 		"desc": "Restores some health of any teamate",
 		"attack": 10,
-		"mana_cost": 10,
+		"refill_cost": 25,
 		"uses_count": 5,
 		"target": ["team", "enemy"],
 		"target_type": "single",
 		"attack_type": "spell"
 	},
 	"Bolt": {
+		"name": "Bolt",
 		"desc": "Electrifies a single enemy unit",
 		"attack": 12,
-		"mana_cost": 25,
+		"refill_cost": 55,
 		"uses_count": 3,
 		"target": ["enemy"],
 		"target_type": "single",
 		"attack_type": "spell"
 	},
 	"Buff": {
+		"name": "Buff",
 		"desc": "Idk buff.",
 		"attack": 12,
-		"mana_cost": 25,
+		"refill_cost": 110,
 		"uses_count": 2,
 		"target": ["team"],
 		"target_type": "single",
