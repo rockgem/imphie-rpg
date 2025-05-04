@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://db7p3yp3xp2v"]
+
+[ext_resource type="Script" uid="uid://srenlbalx7lj" path="res://actors/objs/DamageFloater.gd" id="1_s4aho"]
+
+[node name="HealFloater" type="Node2D"]
+script = ExtResource("1_s4aho")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -11.5
+offset_right = 23.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.231939, 0.57139, 3.85046e-07, 1)
+theme_override_colors/font_outline_color = Color(0.955963, 0.955963, 0.955963, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 28
+text = "99999"
+horizontal_alignment = 1

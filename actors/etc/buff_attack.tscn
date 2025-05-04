@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2ekmqfb60vln"]
+
+[ext_resource type="Script" uid="uid://t4qbtfgaholk" path="res://actors/etc/BuffAttack.gd" id="1_ygrio"]
+
+[node name="BuffAttack" type="Node2D"]
+script = ExtResource("1_ygrio")

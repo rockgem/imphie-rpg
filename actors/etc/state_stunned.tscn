@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://mmp1ueyjtgh8"]
+
+[ext_resource type="Script" uid="uid://tsdx7s8ru06p" path="res://actors/etc/StateStunned.gd" id="1_lnbfy"]
+
+[node name="BuffAttack" type="Node2D"]
+script = ExtResource("1_lnbfy")

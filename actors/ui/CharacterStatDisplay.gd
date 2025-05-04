@@ -18,6 +18,8 @@ func _ready() -> void:
 	if entity_ref.is_player == false:
 		$Stats/HPBar.fill_mode = $Stats/HPBar.FILL_END_TO_BEGIN
 		$EXPBar.fill_mode = $EXPBar.FILL_END_TO_BEGIN
+	
+	entity_ref.buff_added.connect(on_buff_added)
 
 
 func _physics_process(delta: float) -> void:
@@ -40,3 +42,9 @@ func _physics_process(delta: float) -> void:
 		# set the text of the entity's HP to "DEAD" when their hp is 0
 		if entity_ref.data['hp'] <= 0:
 			$Stats/HPBar/HPCurrent.text = 'DEAD'
+
+
+func on_buff_added(buff_ref: Buff):
+	var buff_display = load('res://actors/ui/BuffIcon.tscn').instantiate()
+	buff_display.buff_ref = buff_ref
+	$Stats/HPBar/BuffsBox.add_child(buff_display)

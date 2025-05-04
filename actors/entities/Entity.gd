@@ -6,6 +6,7 @@ class_name Entity
 # we always pass in the self reference as parameter so we can access this entity and its entire
 # values such as the "data"
 signal clicked(own)
+signal buff_added(buff_ref)
 
 
 @export var is_player = true
@@ -83,8 +84,11 @@ func gain_exp(exp = 1):
 	$ExpEffect.play("default")
 
 
-func add_buff():
-	pass
+func add_buff(buff: Buff):
+	print('buff added!')
+	
+	add_child(buff)
+	buff_added.emit(buff)
 
 
 # this is only going to be used for ENEMY type entities,
@@ -123,7 +127,36 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		# reduce the skill's usage
 		ManagerGame.global_ui_ref.current_skill_selected['uses_count'] -= 1
 		
-		if ManagerGame.global_main_world_ref.turns_arrangement[0].is_player and ManagerGame.global_main_world_ref.turns_arrangement[0] != self:
-			ManagerGame.global_main_world_ref.turns_arrangement[0].attack(self)
+		# NOTE: states such as "stunned" is still considered as a "buff" because buffs and state essentially works
+		# the same under the hood, bacause they disappear at a certain period/turn and executes an effect on _ready()
+		if ManagerGame.global_ui_ref.current_skill_selected.has('skill_script'):
+			var state: Buff = load(ManagerGame.global_ui_ref.current_skill_selected['skill_script']).instantiate()
+			
+			# add the buff on this entity itself
+			# the buff will automatically execute its own code since it is in its own script/node ( _ready() )
+			add_buff(state)
+		
+		# for now, there are just simple 4-types of attack, if ever the skills gets more complicated
+		# a different approach may be needed, perhaps it may need to have separate scripts for each skills.
+		# but for now, its not that complicated. this will work just fine.
+		match ManagerGame.global_ui_ref.current_skill_selected['name']:
+			'Attack':
+				if ManagerGame.global_main_world_ref.turns_arrangement[0].is_player and ManagerGame.global_main_world_ref.turns_arrangement[0] != self:
+					ManagerGame.global_main_world_ref.turns_arrangement[0].attack(self)
+			"Heal":
+				var heal_amount = 100
+				
+				$HealFX.play("default")
+				data['hp'] = clamp(data['hp'] + heal_amount, 0, data['hp_max'])
+				
+				var df = load('res://actors/objs/HealFloater.tscn').instantiate()
+				df.get_node('Label').text = '%s' % int(heal_amount)
+				add_child(df)
+				
+				ManagerGame.entity_action_finished.emit()
+			"Bolt":
+				ManagerGame.entity_action_finished.emit()
+			"Buff":
+				ManagerGame.entity_action_finished.emit()
 		
 		clicked.emit(self) # pass self reference

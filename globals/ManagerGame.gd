@@ -23,7 +23,6 @@ var player_data = {} :
 	set(value):
 		player_data = value
 		
-		print('hoy')
 		player_data_changed.emit()
 var items_data = {}
 var skills_data = {}

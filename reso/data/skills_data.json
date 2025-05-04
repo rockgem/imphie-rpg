@@ -27,7 +27,8 @@
 		"uses_count": 3,
 		"target": ["enemy"],
 		"target_type": "single",
-		"attack_type": "spell"
+		"attack_type": "spell",
+		"skill_script": "res://actors/etc/state_stunned.tscn"
 	},
 	"Buff": {
 		"name": "Buff",
@@ -35,8 +36,9 @@
 		"attack": 12,
 		"refill_cost": 110,
 		"uses_count": 2,
-		"target": ["team"],
+		"target": ["team", "enemy"],
 		"target_type": "single",
-		"attack_type": "buff"
+		"attack_type": "buff",
+		"skill_script": "res://actors/etc/buff_attack.tscn"
 	},
 }

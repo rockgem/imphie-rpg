@@ -78,6 +78,20 @@ grow_vertical = 2
 text = "100"
 horizontal_alignment = 2
 
+[node name="BuffsBox" type="HBoxContainer" parent="Stats/HPBar"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = -16.0
+offset_right = -47.0
+offset_bottom = 16.0
+grow_vertical = 2
+alignment = 2
+
 [node name="EXPBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2

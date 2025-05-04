@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsqmrm3x2254t"]
+
+[ext_resource type="Texture2D" uid="uid://fv2g1svplq66" path="res://reso/icons/buffs/buff_attack.tres" id="1_obubg"]
+[ext_resource type="Script" uid="uid://uuswxmyo1dge" path="res://actors/ui/BuffIcon.gd" id="2_u8d4a"]
+
+[node name="BuffIcon" type="TextureRect"]
+custom_minimum_size = Vector2(32, 32)
+texture = ExtResource("1_obubg")
+script = ExtResource("2_u8d4a")
