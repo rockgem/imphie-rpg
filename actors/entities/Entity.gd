@@ -74,6 +74,12 @@ func attack(entity: Entity):
 func gain_exp(exp = 1):
 	data['exp'] += exp
 	
+	# if this hero reaches max exp, level up by one and reset exp counter
+	if data['exp'] > data['exp_max']:
+		data['exp'] = 0.0
+		data['level'] += 1
+		data['exp_max'] *= 1.2
+	
 	$ExpEffect.play("default")
 
 
