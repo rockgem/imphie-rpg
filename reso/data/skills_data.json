@@ -31,7 +31,7 @@
 		"attack": 12,
 		"mana_cost": 25,
 		"uses_count": 2,
-		"target": ["enemy"],
+		"target": ["team"],
 		"target_type": "single",
 		"attack_type": "buff"
 	},

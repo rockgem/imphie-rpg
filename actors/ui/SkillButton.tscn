@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d31ei2acx4nyq"]
+
+[ext_resource type="Script" uid="uid://cndavclqgqetv" path="res://actors/ui/SkillButton.gd" id="1_s05yw"]
+
+[node name="SkillButton" type="Button"]
+script = ExtResource("1_s05yw")

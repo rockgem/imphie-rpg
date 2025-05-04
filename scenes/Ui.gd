@@ -8,7 +8,6 @@ class_name UI
 var current_skill_selected = {}
 
 
-
 func _ready() -> void:
 	ManagerGame.global_ui_ref = self
 	
@@ -24,7 +23,8 @@ func _ready() -> void:
 		button.queue_free()
 	
 	for skill in ManagerGame.skills_data:
-		var new_button = Button.new()
+		var new_button: SkillButton = load('res://actors/ui/SkillButton.tscn').instantiate()
+		new_button.data = ManagerGame.skills_data[skill]
 		new_button.text = skill
 		
 		$BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox.add_child(new_button)
@@ -97,6 +97,7 @@ func hide_bottom_panel():
 
 func on_attack_selected(attack_name: String):
 	current_skill_selected = ManagerGame.skills_data[attack_name]
+	#var attack_name = current_skill_button_selected.text
 	
 	$BottomPanel/HBoxContainer/AttackOptionsBox/SkillDescription.text = current_skill_selected['desc']
 	
@@ -107,7 +108,7 @@ func on_attack_selected(attack_name: String):
 	else:
 		$BottomPanel/HBoxContainer/SkillStatBox/SkillAttack/Label2.text = '%s' % int(current_skill_selected['attack'])
 	
-	
+	$BottomPanel/HBoxContainer/SkillStatBox/SkillUses/Label2.text = '%s' % int(current_skill_selected['uses_count'])
 
 
 func _on_shop_pressed() -> void:
