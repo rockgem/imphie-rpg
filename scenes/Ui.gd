@@ -28,6 +28,8 @@ func _ready() -> void:
 		# that means when you edit this data's values, it edits every single reference it has around the game
 		# i made it like this so you won't have to keep changing the data individualy but only change one of them and the rest will be reflected
 		# i feel like this is a bit more advanced side of programming, hopefully you will get the idea.
+		
+		# P.S. i also did this same technique in other areas of the game such as; Entity.tscn -> "data" dictionary being reference in CharacterStatDisplay.tscn
 		new_button.data = ManagerGame.skills_data[skill]
 		# ###################################################################################################
 		
