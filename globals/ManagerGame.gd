@@ -15,6 +15,7 @@ signal inventory_changed
 # like, adding damage floater objects or even manipulate the background on certain situations
 # see ( World.tscn )
 var global_main_world_ref: MainWorld
+var global_ui_ref: UI
 
 
 var player_data = {}

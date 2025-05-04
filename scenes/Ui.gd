@@ -1,9 +1,17 @@
 extends CanvasLayer
+class_name UI
 
 #var attack_queue = {}
 
 
+# this dict's structure will be the same as skills_data
+var current_skill_selected = {}
+
+
+
 func _ready() -> void:
+	ManagerGame.global_ui_ref = self
+	
 	ManagerGame.pop_to_ui.connect(on_pop_to_ui)
 	
 	clear_players()
@@ -16,7 +24,10 @@ func _ready() -> void:
 		button.queue_free()
 	
 	for skill in ManagerGame.skills_data:
-		pass
+		var new_button = Button.new()
+		new_button.text = skill
+		
+		$BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox.add_child(new_button)
 	
 	for skill_button in $BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox.get_children():
 		skill_button.pressed.connect(on_attack_selected.bind(skill_button.text))
@@ -85,16 +96,18 @@ func hide_bottom_panel():
 
 
 func on_attack_selected(attack_name: String):
-	var skill_data = ManagerGame.skills_data[attack_name]
+	current_skill_selected = ManagerGame.skills_data[attack_name]
 	
-	$BottomPanel/HBoxContainer/AttackOptionsBox/SkillDescription.text = skill_data['desc']
+	$BottomPanel/HBoxContainer/AttackOptionsBox/SkillDescription.text = current_skill_selected['desc']
 	
 	# attack is a melee attack ( based on the character's attack value itself )
 	if attack_name == 'Attack':
 		var current_entity_turn = ManagerGame.global_main_world_ref.turns_arrangement[0]
 		$BottomPanel/HBoxContainer/SkillStatBox/SkillAttack/Label2.text = '%s' % int(current_entity_turn.data['attack'])
 	else:
-		$BottomPanel/HBoxContainer/SkillStatBox/SkillAttack/Label2.text = '%s' % int(skill_data['attack'])
+		$BottomPanel/HBoxContainer/SkillStatBox/SkillAttack/Label2.text = '%s' % int(current_skill_selected['attack'])
+	
+	
 
 
 func _on_shop_pressed() -> void:

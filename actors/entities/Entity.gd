@@ -108,8 +108,20 @@ func choose_random_player_attack():
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	var entity_id = ''
+	if is_player:
+		entity_id = 'team'
+	else:
+		entity_id = 'enemy'
+	
+	if ManagerGame.global_ui_ref.current_skill_selected['target'].has(entity_id):
+		pass
+	else:
+		return
+	
+	
 	if event is InputEventScreenTouch and !event.pressed:
-		if ManagerGame.global_main_world_ref.turns_arrangement[0].is_player and is_player == false:
+		if ManagerGame.global_main_world_ref.turns_arrangement[0].is_player and ManagerGame.global_main_world_ref.turns_arrangement[0] != self:
 			ManagerGame.global_main_world_ref.turns_arrangement[0].attack(self)
 		
 		clicked.emit(self) # pass self reference
