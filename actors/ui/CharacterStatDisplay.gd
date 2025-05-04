@@ -26,6 +26,8 @@ func _physics_process(delta: float) -> void:
 	# the actual values that changes these are found in the entity's node itself ( Entity.tscn instance ) see ( World.tscn -> load_player_data() function )
 	# see also; ( Entity.tscn -> receive_damage() function )
 	if entity_ref != null:
+		$Stats/HPBar/Name.text = '%s Lv.%s' % [entity_ref.data['name'], int(entity_ref.data['level'])]
+		
 		$Stats/HPBar.value = entity_ref.data['hp']
 		$Stats/HPBar.max_value = entity_ref.data['hp_max']
 		
