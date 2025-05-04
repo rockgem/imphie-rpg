@@ -66,6 +66,10 @@ func attack(entity: Entity):
 	ManagerGame.entity_action_finished.emit()
 
 
+func add_buff():
+	pass
+
+
 # this is only going to be used for ENEMY type entities,
 # it automatically attacks random player characters
 func choose_random_player_attack():

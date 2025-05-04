@@ -3,7 +3,8 @@
 		"desc": "A normal melee attack",
 		"attack": 4,
 		"mana_cost": 0,
-		"target": "enemy",
+		"uses_count": 10,
+		"target": ["enemy"],
 		"target_type": "single",
 		"attack_type": "melee"
 	},
@@ -11,7 +12,8 @@
 		"desc": "Restores some health of any teamate",
 		"attack": 10,
 		"mana_cost": 10,
-		"target": "team",
+		"uses_count": 5,
+		"target": ["team", "enemy"],
 		"target_type": "single",
 		"attack_type": "spell"
 	},
@@ -19,7 +21,8 @@
 		"desc": "Electrifies a single enemy unit",
 		"attack": 12,
 		"mana_cost": 25,
-		"target": "enemy",
+		"uses_count": 3,
+		"target": ["enemy"],
 		"target_type": "single",
 		"attack_type": "spell"
 	},
@@ -27,7 +30,8 @@
 		"desc": "Idk buff.",
 		"attack": 12,
 		"mana_cost": 25,
-		"target": "enemy",
+		"uses_count": 2,
+		"target": ["enemy"],
 		"target_type": "single",
 		"attack_type": "buff"
 	},
