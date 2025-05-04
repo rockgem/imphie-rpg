@@ -10,8 +10,18 @@ func _ready() -> void:
 	
 	$BottomPanel.hide()
 	
-	for skill_button in $BottomPanel/HBoxContainer/AttackOptionsBox/HBoxContainer.get_children():
+	# #########################################################################
+	# dynamically loading buttons instead
+	for button in $BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox.get_children():
+		button.queue_free()
+	
+	for skill in ManagerGame.skills_data:
+		pass
+	
+	for skill_button in $BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox.get_children():
 		skill_button.pressed.connect(on_attack_selected.bind(skill_button.text))
+	
+	# #########################################################################
 
 
 func _physics_process(delta: float) -> void:

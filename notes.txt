@@ -1,0 +1,14 @@
+
+Imphie
+
+Apr 30, 2025, 7:51 AM
+
+
+Sure. Thank you. I will add the list here.
+- Healing, stunning, and buffing.
+- I want it to be able to target any character so I can attack my teammate or I can heal the enemy.
+- When buffing a character attack, an icon next to their healthbar should appear and their attack increases for 3 turns then after 3 turns the buff ends.
+- Make characters gain experience after defeating enemy and increase stats when level up. The tiny blue bar under their health is the experience bar.
+- Give team bonus +1 defense if the player team has warrior, archer, and mage.
+- Make skills count use and become unavailable after use is 0
+- Add keyboard controls.

@@ -137,10 +137,10 @@ layout_mode = 2
 [node name="AttackOptionsBox" type="VBoxContainer" parent="BottomPanel/HBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BottomPanel/HBoxContainer/AttackOptionsBox"]
+[node name="SkillsButtonBox" type="HBoxContainer" parent="BottomPanel/HBoxContainer/AttackOptionsBox"]
 layout_mode = 2
 
-[node name="Attack" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/HBoxContainer"]
+[node name="Attack" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 focus_mode = 0
@@ -149,7 +149,7 @@ button_pressed = true
 button_group = SubResource("ButtonGroup_g3ve3")
 text = "Attack"
 
-[node name="Heal" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/HBoxContainer"]
+[node name="Heal" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 focus_mode = 0
@@ -157,7 +157,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_g3ve3")
 text = "Heal"
 
-[node name="Bolt" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/HBoxContainer"]
+[node name="Bolt" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 focus_mode = 0
@@ -165,7 +165,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_g3ve3")
 text = "Bolt"
 
-[node name="Buff" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/HBoxContainer"]
+[node name="Buff" type="Button" parent="BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 focus_mode = 0

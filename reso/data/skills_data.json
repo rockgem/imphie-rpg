@@ -4,7 +4,7 @@
 		"attack": 4,
 		"mana_cost": 0,
 		"uses_count": 10,
-		"target": ["enemy"],
+		"target": ["team","enemy"],
 		"target_type": "single",
 		"attack_type": "melee"
 	},
