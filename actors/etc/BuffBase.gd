@@ -1,7 +1,11 @@
 extends Node
 class_name Buff
 
-var rounds_remaining = 1
+# the amount of rounds the buff will remain
+# if this counter goes to zero, the buff will automatically delete itself and will run
+# the  delete_buff() function see: ( on_wave_finished() )
+# NOTE: you can override this as well if needed, when creating a new buff script, just change this value on the activate() function
+var rounds_remaining = 3
 
 
 # NOTE: this is also one of the advanced techniques i use when making complex skills system
