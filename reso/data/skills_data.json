@@ -28,7 +28,8 @@
 		"target": ["enemy"],
 		"target_type": "single",
 		"attack_type": "spell",
-		"skill_script": "res://actors/etc/state_stunned.tscn"
+		"skill_script": "res://actors/etc/state_stunned.tscn",
+		"icon": "res://reso/icons/buffs/state_stunned.tres"
 	},
 	"Buff": {
 		"name": "Buff",
@@ -39,6 +40,7 @@
 		"target": ["team", "enemy"],
 		"target_type": "single",
 		"attack_type": "buff",
-		"skill_script": "res://actors/etc/buff_attack.tscn"
+		"skill_script": "res://actors/etc/buff_attack.tscn",
+		"icon": "res://reso/icons/buffs/buff_attack.tres"
 	},
 }

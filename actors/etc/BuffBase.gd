@@ -7,6 +7,7 @@ class_name Buff
 # NOTE: you can override this as well if needed, when creating a new buff script, just change this value on the activate() function
 var rounds_remaining = 3
 
+var icon # the icon
 
 # NOTE: this is also one of the advanced techniques i use when making complex skills system
 # this uses something called inheritance where you can only override certain functions to customize how

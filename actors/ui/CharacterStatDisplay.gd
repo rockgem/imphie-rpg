@@ -47,4 +47,5 @@ func _physics_process(delta: float) -> void:
 func on_buff_added(buff_ref: Buff):
 	var buff_display = load('res://actors/ui/BuffIcon.tscn').instantiate()
 	buff_display.buff_ref = buff_ref
+	buff_display.texture = buff_ref.icon
 	$Stats/HPBar/BuffsBox.add_child(buff_display)

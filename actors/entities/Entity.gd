@@ -85,8 +85,6 @@ func gain_exp(exp = 1):
 
 
 func add_buff(buff: Buff):
-	print('buff added!')
-	
 	add_child(buff)
 	buff_added.emit(buff)
 
@@ -131,7 +129,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		# the same under the hood, bacause they disappear at a certain period/turn and executes an effect on _ready()
 		if ManagerGame.global_ui_ref.current_skill_selected.has('skill_script'):
 			var state: Buff = load(ManagerGame.global_ui_ref.current_skill_selected['skill_script']).instantiate()
-			
+			state.icon = load(ManagerGame.global_ui_ref.current_skill_selected['icon'])
 			# add the buff on this entity itself
 			# the buff will automatically execute its own code since it is in its own script/node ( _ready() )
 			add_buff(state)
