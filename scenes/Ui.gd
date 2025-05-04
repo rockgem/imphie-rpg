@@ -24,7 +24,13 @@ func _ready() -> void:
 	
 	for skill in ManagerGame.skills_data:
 		var new_button: SkillButton = load('res://actors/ui/SkillButton.tscn').instantiate()
+		# btw, you need to be aware that this data is essentially going to be the same even though it is getting passed around like a college girl
+		# that means when you edit this data's values, it edits every single reference it has around the game
+		# i made it like this so you won't have to keep changing the data individualy but only change one of them and the rest will be reflected
+		# i feel like this is a bit more advanced side of programming, hopefully you will get the idea.
 		new_button.data = ManagerGame.skills_data[skill]
+		# ###################################################################################################
+		
 		new_button.text = skill
 		
 		$BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox.add_child(new_button)
