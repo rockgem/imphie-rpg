@@ -1,13 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bv7n5saufen75"]
+[gd_scene load_steps=5 format=3 uid="uid://bv7n5saufen75"]
 
 [ext_resource type="Script" uid="uid://dbwywqrqsg8ap" path="res://actors/entities/Entity.gd" id="1_8b186"]
 [ext_resource type="Texture2D" uid="uid://btshechntiofq" path="res://reso/sprites/entities/Mage.tres" id="2_0umhn"]
+[ext_resource type="PackedScene" uid="uid://cl3kqrqvk280b" path="res://actors/objs/EXPEffect.tscn" id="3_770yq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8b186"]
 radius = 44.0114
 
 [node name="Entity" type="Node2D" groups=["Entity"]]
 script = ExtResource("1_8b186")
+
+[node name="ExpEffect" parent="." instance=ExtResource("3_770yq")]
+position = Vector2(0, 16)
+scale = Vector2(0.726562, 0.726563)
+frame = 0
+frame_progress = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

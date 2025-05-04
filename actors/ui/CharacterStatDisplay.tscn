@@ -80,7 +80,7 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "100"
 
-[node name="ManaBar" type="ProgressBar" parent="."]
+[node name="EXPBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_68hwa")

@@ -44,6 +44,11 @@ func receive_damage(damage = 1):
 		is_dead = true
 		data['hp'] = 0
 		
+		# we get the previous entity that did an action
+		# which means the the entity killed this one
+		var last_entity: Entity = ManagerGame.global_main_world_ref.turns_arrangement.front()
+		last_entity.gain_exp(randf_range(10, 25))
+		
 		hide()
 		
 		#queue_free()
@@ -64,6 +69,12 @@ func attack(entity: Entity):
 	# so that the game will be able tell that the next queued entity is next to do their thing.
 	# see ( World.gd -> on_entity_action_finished() function )
 	ManagerGame.entity_action_finished.emit()
+
+
+func gain_exp(exp = 1):
+	data['exp'] += exp
+	
+	$ExpEffect.play("default")
 
 
 func add_buff():
