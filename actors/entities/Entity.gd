@@ -86,13 +86,25 @@ func gain_exp(exp = 1):
 
 
 func add_buff(buff: Buff):
+	buff.add_to_group('Buff')
+	
 	add_child(buff)
 	buff_added.emit(buff)
+
+
+func reduce_buff_remaining():
+	var buffs = get_tree().get_nodes_in_group('Buff')
+	if buffs.is_empty() == false:
+		var buff: Buff = buffs[0]
+		
+		buff.reduce_remaining()
 
 
 # this is only going to be used for ENEMY type entities,
 # it automatically attacks random player characters
 func choose_random_player_attack():
+	reduce_buff_remaining()
+	
 	if can_move == false:
 		ManagerGame.entity_action_finished.emit()
 		return
@@ -162,5 +174,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				ManagerGame.entity_action_finished.emit()
 			"Buff":
 				ManagerGame.entity_action_finished.emit()
+		
+		ManagerGame.global_main_world_ref.turns_arrangement[0].reduce_buff_remaining()
 		
 		clicked.emit(self) # pass self reference

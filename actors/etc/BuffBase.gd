@@ -17,7 +17,7 @@ var icon # the icon
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	ManagerGame.wave_finished.connect(on_wave_finished)
+	#ManagerGame.wave_finished.connect(on_wave_finished)
 	
 	activate()
 
@@ -30,9 +30,17 @@ func delete_buff():
 	pass
 
 
-func on_wave_finished(is_win: bool):
+func reduce_remaining():
 	rounds_remaining -= 1
 	
 	if rounds_remaining <= 0:
 		delete_buff()
 		queue_free()
+
+
+#func on_wave_finished(is_win: bool):
+	#rounds_remaining -= 1
+	#
+	#if rounds_remaining <= 0:
+		#delete_buff()
+		#queue_free()
