@@ -123,7 +123,9 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			return
 		
 		# reduce the skill's usage
-		ManagerGame.global_ui_ref.current_skill_selected['uses_count'] -= 1
+		# do not reduce usage when its just the normal attack
+		if ManagerGame.global_ui_ref.current_skill_selected['name'] != 'Attack':
+			ManagerGame.global_ui_ref.current_skill_selected['uses_count'] -= 1
 		
 		# NOTE: states such as "stunned" is still considered as a "buff" because buffs and state essentially works
 		# the same under the hood, bacause they disappear at a certain period/turn and executes an effect on _ready()

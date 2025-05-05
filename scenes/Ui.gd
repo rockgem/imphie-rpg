@@ -84,7 +84,7 @@ func pop_bottom_panel(entity: Entity):
 	
 	for skill in entity.data['skills_data']:
 		var new_button: SkillButton = load('res://actors/ui/SkillButton.tscn').instantiate()
-		new_button.data = ManagerGame.skills_data[skill]
+		new_button.data = entity.data['skills_data'][skill]
 		new_button.text = skill
 		
 		$BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox.add_child(new_button)
@@ -136,7 +136,10 @@ func on_attack_selected(attack_name: String):
 	else:
 		$BottomPanel/HBoxContainer/SkillStatBox/SkillAttack/Label2.text = '%s' % int(current_skill_selected['attack'])
 	
-	$BottomPanel/HBoxContainer/SkillStatBox/SkillUses/Label2.text = '%s' % int(current_skill_selected['uses_count'])
+	if attack_name != 'Attack':
+		$BottomPanel/HBoxContainer/SkillStatBox/SkillUses/Label2.text = '%s' % int(current_skill_selected['uses_count'])
+	else:
+		$BottomPanel/HBoxContainer/SkillStatBox/SkillUses/Label2.text = 'Infinite'
 
 
 func _on_shop_pressed() -> void:
