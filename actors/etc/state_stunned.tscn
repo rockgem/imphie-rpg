@@ -1,6 +1,59 @@
-[gd_scene load_steps=2 format=3 uid="uid://mmp1ueyjtgh8"]
+[gd_scene load_steps=9 format=3 uid="uid://mmp1ueyjtgh8"]
 
 [ext_resource type="Script" uid="uid://tsdx7s8ru06p" path="res://actors/etc/StateStunned.gd" id="1_lnbfy"]
+[ext_resource type="Texture2D" uid="uid://4jq1dkq3krbd" path="res://art/fx/bolt.png" id="2_hsjr1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdxmt"]
+atlas = ExtResource("2_hsjr1")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppssa"]
+atlas = ExtResource("2_hsjr1")
+region = Rect2(128, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsyt8"]
+atlas = ExtResource("2_hsjr1")
+region = Rect2(256, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr68v"]
+atlas = ExtResource("2_hsjr1")
+region = Rect2(384, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tqw5"]
+atlas = ExtResource("2_hsjr1")
+region = Rect2(512, 0, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lajg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdxmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppssa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsyt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr68v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tqw5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 14.0
+}]
 
 [node name="BuffAttack" type="Node2D"]
 script = ExtResource("1_lnbfy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -79)
+sprite_frames = SubResource("SpriteFrames_8lajg")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
