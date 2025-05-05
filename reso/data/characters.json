@@ -10,7 +10,9 @@
 		"exp": 0,
 		"exp_max": 100,
 		"level": 1,
-		"name": "Warrior"
+		"name": "Warrior",
+		"skills": ["Attack"],
+		"skills_data": {}
 	},
 	"Mage": {
 		"attack": 4,
@@ -23,7 +25,9 @@
 		"exp": 0,
 		"exp_max": 100,
 		"level": 1,
-		"name": "Mage"
+		"name": "Mage",
+		"skills": ["Attack", "Heal", "Bolt", "Buff"],
+		"skills_data": {}
 	},
 	"Archer": {
 		"attack": 12,
@@ -36,6 +40,8 @@
 		"exp": 0,
 		"exp_max": 100,
 		"level": 1,
-		"name": "Archer"
+		"name": "Archer",
+		"skills": ["Attack"],
+		"skills_data": {}
 	}
 }

@@ -36,6 +36,13 @@ func _ready() -> void:
 	
 	# add the starting characters into player_data :D
 	player_data['characters'] = characters
+	
+	# duplicate skills_data
+	for char in player_data['characters']:
+		for skill in player_data['characters'][char]['skills']:
+			var dup = skills_data[skill].duplicate()
+			
+			player_data['characters'][char]['skills_data'][skill] = dup
 
 
 # a helper function which converts json files into a game-readable dictionary

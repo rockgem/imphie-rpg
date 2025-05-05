@@ -17,6 +17,8 @@ func _ready() -> void:
 	
 	$BottomPanel.hide()
 	
+	return
+	
 	# #########################################################################
 	# dynamically loading buttons instead
 	for button in $BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox.get_children():
@@ -76,6 +78,23 @@ func add_enemy_display(entity_ref: Entity):
 
 
 func pop_bottom_panel(entity: Entity):
+	# connect only valid skills ###############
+	for child in $BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox.get_children():
+		child.queue_free()
+	
+	for skill in entity.data['skills_data']:
+		var new_button: SkillButton = load('res://actors/ui/SkillButton.tscn').instantiate()
+		new_button.data = ManagerGame.skills_data[skill]
+		new_button.text = skill
+		
+		$BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox.add_child(new_button)
+	
+	for skill_button in $BottomPanel/HBoxContainer/AttackOptionsBox/SkillsButtonBox.get_children():
+		if skill_button.pressed.is_connected(on_attack_selected) == false:
+			skill_button.pressed.connect(on_attack_selected.bind(skill_button.text))
+	
+	# ##########################################
+	
 	$BottomPanel/HBoxContainer/StatBox/EntityAttack/Label2.text = '%s' % int(entity.data['attack'])
 	$BottomPanel/HBoxContainer/StatBox/EntityDefense/Label2.text = '%s' % int(entity.data['defense'])
 	$BottomPanel/HBoxContainer/StatBox/EntitySpeed/Label2.text = '%s' % int(entity.data['speed'])
@@ -104,10 +123,11 @@ func hide_bottom_panel():
 
 
 func on_attack_selected(attack_name: String):
-	current_skill_selected = ManagerGame.skills_data[attack_name]
+	current_skill_selected = ManagerGame.global_main_world_ref.turns_arrangement[0].data['skills_data'][attack_name]
 	#var attack_name = current_skill_button_selected.text
 	
 	$BottomPanel/HBoxContainer/AttackOptionsBox/SkillDescription.text = current_skill_selected['desc']
+	
 	
 	# attack is a melee attack ( based on the character's attack value itself )
 	if attack_name == 'Attack':

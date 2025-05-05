@@ -135,6 +135,7 @@ text = "12"
 layout_mode = 2
 
 [node name="AttackOptionsBox" type="VBoxContainer" parent="BottomPanel/HBoxContainer"]
+custom_minimum_size = Vector2(260, 0)
 layout_mode = 2
 
 [node name="SkillsButtonBox" type="HBoxContainer" parent="BottomPanel/HBoxContainer/AttackOptionsBox"]
