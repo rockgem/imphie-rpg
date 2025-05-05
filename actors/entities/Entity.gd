@@ -11,6 +11,7 @@ signal buff_added(buff_ref)
 
 @export var is_player = true
 @export var is_dead = false
+var can_move = true
 
 # in this dictionary, we store the entity's hp, mana, exp etc.
 var data = {}
@@ -92,6 +93,9 @@ func add_buff(buff: Buff):
 # this is only going to be used for ENEMY type entities,
 # it automatically attacks random player characters
 func choose_random_player_attack():
+	if can_move == false:
+		ManagerGame.entity_action_finished.emit()
+		return
 	
 	# check if the entity is already dead, if so, skip the action by calling entity_action_finished
 	if is_dead:

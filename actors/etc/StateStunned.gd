@@ -4,11 +4,11 @@ extends Buff
 
 
 func activate():
-	pass
+	get_parent().can_move = false
 
 
 func delete_buff():
-	get_parent().data['attack'] -= 5
+	get_parent().can_move = true
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
