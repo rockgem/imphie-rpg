@@ -29,12 +29,15 @@ func _ready() -> void:
 	
 	for child in $Panel/SkillsPanel/SkillsList.get_children():
 		child.queue_free()
+	for child in $Panel/SkillsPanel/CharacterList.get_children():
+		child.queue_free()
 	
-	for skill in ManagerGame.skills_data:
-		var i = load('res://actors/ui/SkillRefillDisplay.tscn').instantiate()
-		i.data = ManagerGame.skills_data[skill]
+	for char in ManagerGame.player_data['characters']:
+		var b = Button.new()
+		b.text = char
+		b.pressed.connect(on_char_selected.bind(b.text))
 		
-		$Panel/SkillsPanel/SkillsList.add_child(i)
+		$Panel/SkillsPanel/CharacterList.add_child(b)
 	
 	# it is important to pause the scene tree when this view is active, this essentially
 	# pauses the game until this view is closed
@@ -76,3 +79,14 @@ func _on_buy_final_pressed() -> void:
 
 func on_player_data_changed():
 	$Panel/Gold.text = '%s' % int(ManagerGame.player_data['gold'])
+
+
+func on_char_selected(char_name: String):
+	for child in $Panel/SkillsPanel/SkillsList.get_children():
+		child.queue_free()
+	
+	for skill in ManagerGame.player_data['characters'][char_name]['skills_data']:
+		var i = load('res://actors/ui/SkillRefillDisplay.tscn').instantiate()
+		i.data = ManagerGame.player_data['characters'][char_name]['skills_data'][skill]
+		
+		$Panel/SkillsPanel/SkillsList.add_child(i)
