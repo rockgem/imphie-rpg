@@ -86,17 +86,12 @@ func gain_exp(exp = 1):
 
 
 func add_buff(buff: Buff):
-	buff.add_to_group('Buff')
-	
-	add_child(buff)
+	$Buffs.add_child(buff)
 	buff_added.emit(buff)
 
 
 func reduce_buff_remaining():
-	var buffs = get_tree().get_nodes_in_group('Buff')
-	if buffs.is_empty() == false:
-		var buff: Buff = buffs[0]
-		
+	for buff: Buff in $Buffs.get_children():
 		buff.reduce_remaining()
 
 
