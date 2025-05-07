@@ -86,6 +86,10 @@ func gain_exp(exp = 1):
 
 
 func add_buff(buff: Buff):
+	if $Buffs.get_child_count() > 0:
+		$Buffs.get_child(0).delete_buff()
+		$Buffs.get_child(0).queue_free()
+	
 	$Buffs.add_child(buff)
 	buff_added.emit(buff)
 
