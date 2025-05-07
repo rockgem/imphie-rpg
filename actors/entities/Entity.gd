@@ -11,6 +11,7 @@ signal buff_added(buff_ref)
 
 @export var is_player = true
 @export var is_dead = false
+var is_attacking = false
 var can_move = true
 
 # in this dictionary, we store the entity's hp, mana, exp etc.
@@ -66,6 +67,8 @@ func attack(entity: Entity):
 	entity.receive_damage(damage_rate)
 	
 	await t.finished
+	
+	ManagerGame.global_main_world_ref.turns_arrangement[0].is_attacking = false
 	
 	# this signal needs to be emmitted after every action such as; attacking, healing or even skipping a turn
 	# so that the game will be able tell that the next queued entity is next to do their thing.
@@ -125,7 +128,13 @@ func choose_random_player_attack():
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventScreenTouch and !event.pressed:
+	if event is InputEventScreenTouch and !event.pressed and ManagerGame.global_main_world_ref.turns_arrangement[0].is_attacking == false:
+		
+		# set the entity's "is_attacking" of whoever turn it is to true so the entity wont
+		# attack multiple times until the attack's animation is finished
+		# see ( attack() function)
+		ManagerGame.global_main_world_ref.turns_arrangement[0].is_attacking = true
+		
 		var entity_id = ''
 		if is_player:
 			entity_id = 'team'
@@ -134,8 +143,8 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		
 		# checks if the selected skill allows targeting of valid entities ( see skill's data at skills_data.json -> "target": [] )
 		# returns from function if this entity isn't in the skill's target list
-		if ManagerGame.global_ui_ref.current_skill_selected['target'].has(entity_id) == false:
-			return
+		#if ManagerGame.global_ui_ref.current_skill_selected['target'].has(entity_id) == false:
+			#return
 		
 		# reduce the skill's usage
 		# do not reduce usage when its just the normal attack
