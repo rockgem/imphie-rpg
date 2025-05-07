@@ -143,8 +143,8 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		
 		# checks if the selected skill allows targeting of valid entities ( see skill's data at skills_data.json -> "target": [] )
 		# returns from function if this entity isn't in the skill's target list
-		#if ManagerGame.global_ui_ref.current_skill_selected['target'].has(entity_id) == false:
-			#return
+		if ManagerGame.global_ui_ref.current_skill_selected['target'].has(entity_id) == false:
+			return
 		
 		# reduce the skill's usage
 		# do not reduce usage when its just the normal attack
