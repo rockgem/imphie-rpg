@@ -90,8 +90,7 @@ func gain_exp(exp = 1):
 
 func add_buff(buff: Buff):
 	if $Buffs.get_child_count() > 0:
-		$Buffs.get_child(0).delete_buff()
-		$Buffs.get_child(0).queue_free()
+		$Buffs.get_child(0).remove_buff()
 	
 	$Buffs.add_child(buff)
 	buff_added.emit(buff)
@@ -129,12 +128,6 @@ func choose_random_player_attack():
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventScreenTouch and !event.pressed and ManagerGame.global_main_world_ref.turns_arrangement[0].is_attacking == false:
-		
-		# set the entity's "is_attacking" of whoever turn it is to true so the entity wont
-		# attack multiple times until the attack's animation is finished
-		# see ( attack() function)
-		ManagerGame.global_main_world_ref.turns_arrangement[0].is_attacking = true
-		
 		var entity_id = ''
 		if is_player:
 			entity_id = 'team'
@@ -145,6 +138,11 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		# returns from function if this entity isn't in the skill's target list
 		if ManagerGame.global_ui_ref.current_skill_selected['target'].has(entity_id) == false:
 			return
+		
+		# set the entity's "is_attacking" of whoever turn it is to true so the entity wont
+		# attack multiple times until the attack's animation is finished
+		# see ( attack() function)
+		ManagerGame.global_main_world_ref.turns_arrangement[0].is_attacking = true
 		
 		# reduce the skill's usage
 		# do not reduce usage when its just the normal attack

@@ -30,6 +30,11 @@ func delete_buff():
 	pass
 
 
+func remove_buff():
+	delete_buff()
+	queue_free()
+
+
 func reduce_remaining():
 	rounds_remaining -= 1
 	
