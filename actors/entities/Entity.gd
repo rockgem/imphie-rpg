@@ -177,10 +177,13 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				df.get_node('Label').text = '%s' % int(heal_amount)
 				add_child(df)
 				
+				ManagerGame.global_main_world_ref.turns_arrangement[0].is_attacking = false
 				ManagerGame.entity_action_finished.emit()
 			"Bolt":
+				ManagerGame.global_main_world_ref.turns_arrangement[0].is_attacking = false
 				ManagerGame.entity_action_finished.emit()
 			"Buff":
+				ManagerGame.global_main_world_ref.turns_arrangement[0].is_attacking = false
 				ManagerGame.entity_action_finished.emit()
 		
 		ManagerGame.global_main_world_ref.turns_arrangement[0].reduce_buff_remaining()

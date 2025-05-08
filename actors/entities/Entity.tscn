@@ -184,6 +184,6 @@ horizontal_alignment = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_8b186")
 
-[node name="Buffs" type="Node" parent="."]
+[node name="Buffs" type="Node2D" parent="."]
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
