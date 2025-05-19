@@ -15,7 +15,7 @@
 		"skills_data": {},
 		"stats_increase_on_level_up": {
 			"attack": 3,
-			"mana_max": 4,
+			"hp_max": 4,
 			"defense": 1,
 			"speed": 2,
 		}
@@ -36,9 +36,9 @@
 		"skills_data": {},
 		"stats_increase_on_level_up": {
 			"attack": 2,
-			"mana_max": 1,
+			"mana_max": 5,
+			"hp_max": 1,
 			"defense": 1,
-			"mana": 5,
 		}
 	},
 	"Archer": {
@@ -57,7 +57,7 @@
 		"skills_data": {},
 		"stats_increase_on_level_up": {
 			"attack": 2,
-			"mana_max": 1,
+			"hp_max": 1,
 			"defense": 1,
 			"speed": 5,
 		}
