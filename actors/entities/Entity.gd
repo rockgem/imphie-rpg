@@ -50,7 +50,7 @@ func receive_damage(damage = 1):
 		# we get the previous entity that did an action
 		# which means the the entity killed this one
 		var last_entity: Entity = ManagerGame.global_main_world_ref.turns_arrangement.front()
-		last_entity.gain_exp(randf_range(10, 25))
+		last_entity.gain_exp(randf_range(50, 120))
 		
 		hide()
 		
@@ -84,6 +84,9 @@ func gain_exp(exp = 1):
 		data['exp'] = 0.0
 		data['level'] += 1
 		data['exp_max'] *= 1.2
+		
+		for stat in data['stats_increase_on_level_up']:
+			data[stat] += data['stats_increase_on_level_up'][stat]
 	
 	$ExpEffect.play("default")
 

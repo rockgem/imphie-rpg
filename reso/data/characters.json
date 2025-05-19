@@ -12,7 +12,13 @@
 		"level": 1,
 		"name": "Warrior",
 		"skills": ["Attack"],
-		"skills_data": {}
+		"skills_data": {},
+		"stats_increase_on_level_up": {
+			"attack": 3,
+			"mana_max": 4,
+			"defense": 1,
+			"speed": 2,
+		}
 	},
 	"Mage": {
 		"attack": 4,
@@ -27,7 +33,13 @@
 		"level": 1,
 		"name": "Mage",
 		"skills": ["Attack", "Heal", "Bolt", "Buff"],
-		"skills_data": {}
+		"skills_data": {},
+		"stats_increase_on_level_up": {
+			"attack": 2,
+			"mana_max": 1,
+			"defense": 1,
+			"mana": 5,
+		}
 	},
 	"Archer": {
 		"attack": 12,
@@ -42,6 +54,12 @@
 		"level": 1,
 		"name": "Archer",
 		"skills": ["Attack"],
-		"skills_data": {}
+		"skills_data": {},
+		"stats_increase_on_level_up": {
+			"attack": 2,
+			"mana_max": 1,
+			"defense": 1,
+			"speed": 5,
+		}
 	}
 }
