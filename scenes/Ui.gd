@@ -98,6 +98,9 @@ func pop_bottom_panel(entity: Entity):
 	$BottomPanel/HBoxContainer/StatBox/EntityAttack/Label2.text = '%s' % int(entity.data['attack'])
 	$BottomPanel/HBoxContainer/StatBox/EntityDefense/Label2.text = '%s' % int(entity.data['defense'])
 	$BottomPanel/HBoxContainer/StatBox/EntitySpeed/Label2.text = '%s' % int(entity.data['speed'])
+	$BottomPanel/HBoxContainer/AttackOptionsBox/SkillDescription.text = ''
+	
+	$BottomPanel/HBoxContainer/SkillStatBox.hide()
 	
 	current_skill_selected = {}
 	#on_attack_selected('Attack')
@@ -126,6 +129,8 @@ func hide_bottom_panel():
 func on_attack_selected(attack_name: String):
 	if attack_name == '':
 		return
+	
+	$BottomPanel/HBoxContainer/SkillStatBox.show()
 	
 	current_skill_selected = ManagerGame.global_main_world_ref.turns_arrangement[0].data['skills_data'][attack_name]
 	#var attack_name = current_skill_button_selected.text
