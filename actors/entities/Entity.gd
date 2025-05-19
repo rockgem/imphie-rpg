@@ -50,7 +50,7 @@ func receive_damage(damage = 1):
 		# we get the previous entity that did an action
 		# which means the the entity killed this one
 		var last_entity: Entity = ManagerGame.global_main_world_ref.turns_arrangement.front()
-		last_entity.gain_exp(randf_range(50, 120))
+		last_entity.gain_exp(randf_range(10, 25))
 		
 		hide()
 		
